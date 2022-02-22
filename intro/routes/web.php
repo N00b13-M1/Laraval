@@ -17,26 +17,26 @@ Route::get('/', function () {
     return "Bonjour a tous";
 });
 
-Route::get('/article', function () {
-    $nom = "Elias";
-    $prenom = "Aboutaharan";
+// Route::get('/article', function () {
+//     $nom = "Elias";
+//     $prenom = "Aboutaharan";
 
-    return $nom === "Michael" ? "t'es la bonne personne" : "Error";
+//     return $nom === "Michael" ? "t'es la bonne personne" : "Error";
 
-    // dd($nom);
-    if($prenom == "Elias") {
-        return "Salut Elias";
-    } else {
-        return "Pas Correct";
-    }
-    return $nom . ' ' . $prenom;
-});
+//     // dd($nom);
+//     if($prenom == "Elias") {
+//         return "Salut Elias";
+//     } else {
+//         return "Pas Correct";
+//     }
+//     return $nom . ' ' . $prenom;
+// });
 
-Route::get("/{user}", function ($user) {
-    return $user;
-});
+// Route::get("/{user}", function ($user) {
+//     return $user;
+// });
 
-Route::get("/{nom}/{prenom}/{age}/", function ($nom, $prenom, $age) {
-    return "salut" . $nom . $prenom . "t'as quelle age?" . $age;
-});
+// Route::get("/{nom}/{prenom}/{age}/", function ($nom, $prenom, $age) {
+//     return "salut" . $nom . $prenom . "t'as quelle age?" . $age;
+// });
 
