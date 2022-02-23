@@ -24,12 +24,26 @@ Route::get('/', function () {
 
 // 3. Créez une route dynamique qui renvoi "Bienvenue sur mon site"
 
-Route::get('/{test}', function ($test) {
-    return "Bienvenue sur mon site";
-});
+// Route::get('/{test}', function ($test) {
+//     return "Bienvenue sur mon site";
+// });
 
 // // 4. Créez une route dynamique qui renvoi "Hello" + ce qui a été écrit dans la variable de la route
 
 // Route::get('/{dynamic}', function ($dynamic) {
 //     return "Hello " . $dynamic;
 // });
+
+// # Exercice 2
+// 1. Conservez le fichier welcome et créez un second fichier about dans les views
+// 2. Créez une route pour chaque fichier /welcome et /about
+// 3. Dans chaque fichier mettre un h1 je suis sur la page welcome/about
+// 4. Créer une navigation qui permet d'aller d'une page a l'autre
+
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});

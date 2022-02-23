@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome</title>
+    <title>About</title>
 </head>
 <body>
-    <h1>Je suis sur la page Welcome</h1>
-    <a href="about">To About</a>
+    <h1>Je suis sur la page About</h1>
 </body>
 </html>
