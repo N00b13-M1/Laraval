@@ -7,6 +7,11 @@
     <title>About</title>
 </head>
 <body>
+    <div>
+        <a href="{{ url('/') }}">Welcome</a>
+        <a href="{{ url('/swrw/werw/werw') }}">Contact</a>
+    </div>
     <h1>Je suis sur la page About</h1>
+    <p>J'aime des {{ $fruit}}</p>
 </body>
 </html>

@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>Welcome Page</h1>
-    
+    <p>{{ $var1}} {{ $var2}}</p>
 </body>
 </html>
