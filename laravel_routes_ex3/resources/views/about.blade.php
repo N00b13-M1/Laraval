@@ -10,15 +10,7 @@
 
 <body>
     <h1>test</h1>
-    <?php
-    
-    $nom = 'elias';
-    $prenom = 'hello';
-    
-    $combined = compact("nom","prenom");
-    
-    print_r ($combined);
-    
-    ?>
+    <p>Salut les amis, moi c'est: {{ $prenom }} {{ $nom }}.</p>
+        
 </body>
 </html>

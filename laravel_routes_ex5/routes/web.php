@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// # Exerxcice 3
-// 1. Vous allez créer un dossier laravel sous le nom "laravel-routes-exo2"
-// 2. Dans la view about, envoyez grâce a la méthode compact une variable "prenom" et une "nom" les afficher en suite leur contenu sur la page
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 
 Route::get('/about', function () {
     return view('about');
 });
+
+

@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -22,20 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// # Exerxcice 4
-// 1. Dans un nouveau projet laravel-route-exo3
-// 2. Videz le contenu de la page welcome
-// 3. Ajoutez une structure html de base
-// 4. Modifiez la route de base en route dynamique avec 2 variables
-// 5. Affichez le contenu de ces deux variables dans la page welcome
+// # Exerxcice 3
+// 1. Vous allez créer un dossier laravel sous le nom "laravel-routes-exo2"
+// 2. Dans la view about, envoyez grâce a la méthode compact une variable "prenom" et une "nom" les afficher en suite leur contenu sur la page
 
-Route::get('/{var1}/{var2}', function ($var1,$var2) {
-    return "This is: " . $var1 . " ". $var2;
-
-
-
+Route::get('/about', function () {
+    $nom = "Abutaharan";
+    $prenom = "Elias";
+    return view('about', compact("nom","prenom"));
 });
 
-?>
-</body>
-</html>
+Route::get('/welcome', function () {
+
+    return view('welcome');
+});
+
+
+Route::get('/', function () {
+    return ("Salut les amis");
+});
