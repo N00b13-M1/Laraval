@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Je suis sur la page Welcome</h1>
-    <a href="about">To About</a>
+    <a href="{{ url('/about') }}"> about</a>
+    <a href="{{ url('/welcome') }}"> welcome</a>
 </body>
 </html>

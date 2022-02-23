@@ -22,7 +22,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 // # Exerxcice 4
 // 1. Dans un nouveau projet laravel-route-exo3
 // 2. Videz le contenu de la page welcome
