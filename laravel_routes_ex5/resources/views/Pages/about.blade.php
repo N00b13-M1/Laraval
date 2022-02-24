@@ -9,7 +9,7 @@
 <body>
     <div>
         <a href="{{ url('/') }}">Welcome</a>
-        <a href="{{ url('/swrw/werw/werw') }}">Contact</a>
+        <a href="{{ url('/contact/2/3') }}">Contact</a>
     </div>
     <h1>Je suis sur la page About</h1>
     <p>J'aime des {{ $fruit}}</p>

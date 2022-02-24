@@ -29,20 +29,28 @@ Route::get('/', function () {
     return view ('welcome');
 });
 
-Route::get('/welcome', function () {
-    return "Welcome";
-});
+// Route::get('/welcome', function () {
+//     $person = "Batou";
+//     return (<h1>tst</h1>);
+
+// });
 
 Route::get('{route1}', function () {
     $fruit = "cerises";
     return view ('Pages/about', compact('fruit'));
 });
 
+Route::get('{route1}/{route2}', function () {
+    $prenoms = array('Elias', 'Isma','Imane');
+    return view ('Pages/coding', compact('nom','prenom','tel'));
+});
+
+
 Route::get('{route1}/{route2}/{route3}', function () {
     $nom = "Abutaharan";
     $prenom = "Elias";
     $tel = "023732322";
     return view ('Pages/contact', compact('nom','prenom','tel'));
-});
+})->name("jeamM");
 
 
