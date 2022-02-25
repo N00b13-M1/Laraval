@@ -5,5 +5,4 @@
             <p class="bg-secondary p-3"><span class="text-primary">Home<span> / </p>
         </div>
     </div>
-
 </div>
