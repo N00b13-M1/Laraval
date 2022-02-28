@@ -63,4 +63,16 @@ Route::get('/', function () {
 //     return view("pages/coding", compact("prenoms", "personne"));
 // });
 
+// 1. Vous allez créer 5 objets personne, et vous allez les placer dans un tableau et vous allez devoir le passer en compact dans la blade coding
+// 2. Vous allez faire une condition dans la boucle pour vérifier l'âge de chaque personne, et si la personne a plus de 18 ans, vous affichez dans l'html : Nom personne est majeur, ou sinon nom personne est mineur
 
+
+Route::get("/coding", function () {
+    $prenoms = array("Maxime", "Elias", "Nicolas", "Ayhan", "Cactus");
+    $personne = (object)[
+        "nom" => "Coding",
+        "prenom" => "Elias",
+        "age" => 25
+    ];
+    return view("pages/coding", compact("prenoms", "personne"));
+});
