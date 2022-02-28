@@ -68,11 +68,11 @@ Route::get('/', function () {
 
 
 Route::get("/coding", function () {
-    $prenoms = array("Maxime", "Elias", "Nicolas", "Ayhan", "Cactus");
+    $personnes = ["Pers1", "Pers", "Nicolas", "Ayhan", "Cactus");
     $personne = (object)[
         "nom" => "Coding",
         "prenom" => "Elias",
         "age" => 25
     ];
-    return view("pages/coding", compact("prenoms", "personne"));
+    return view("pages/coding", compact("personnes"));
 });
