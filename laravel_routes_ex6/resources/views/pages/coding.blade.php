@@ -17,5 +17,6 @@
         {{ $personne->prenom }}
         {{ $personne->age }}
     </div>
+    
 </body>
 </html>
