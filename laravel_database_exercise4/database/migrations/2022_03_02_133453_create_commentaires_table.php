@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('commentaires', function (Blueprint $table) {
             $table->id();
-            $table->string('nom', 100);
-            $table->text('text');
-            $table->unsignedFloat('cote');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->date('date_de_publication');
+            $table->string('commentaire');
+            $table->string('poste');
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('commentaires');
     }
 };

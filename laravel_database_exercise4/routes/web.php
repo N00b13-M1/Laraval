@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\User;
+use App\Models\Commentaire;
+use App\Models\Role;
 use Illuminate\Support\Facades\Route;
-use App\Models\Photo;
-use App\Models\Eleve;
-use App\Models\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +17,13 @@ use App\Models\Article;
 */
 
 Route::get('/', function () {
-    // $photo = Photo::all();
-    // dd($photo[0]);
-    $eleve = Eleve::all();
-    dd($eleve[0]);
-    // $article = Article::all();
-    // dd($article[0])->name;
-    return view('welcome');
+    $user = User::all();
+    // dd($user);
+    $comment = Commentaire::all();
+    // dd($comment);
+    $role = Role::all();
+    // $role = Role::find(1)->get();
+    // dd($role);
+
+    return view('welcome',compact("role","user","comment"));
 });
