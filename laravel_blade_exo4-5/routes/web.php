@@ -14,19 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $title= "Welcome";
+    return view('welcome', compact('title'));
 });
 
 
 Route::get('/about', function () {
-    return view('/pages/about');
+    $title1 = "About";
+    return view('/pages/about', compact('title1'));
 });
 
 Route::get('contact', function () {
-    return view('/pages/contact');
+    $title2 = "Contact";
+    return view('/pages/contact', compact('title2'));
 });
 
 Route::get('services', function () {
-    return view('/pages/services');
+    $title3 = "Services";
+    return view('/pages/services', compact('title3'));
 });
 

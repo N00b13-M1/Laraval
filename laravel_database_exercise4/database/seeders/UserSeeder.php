@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             "prenom" => "Elias",
             "age" => "14",
             "email" => "elias@molengeek.com",
-            "password" => bcrypt("test"),
+            "password" => bcrypt("test"), //Hash::make('mdp) or encrypt("mdp")
             "numero_de_tel" => "034532312",
             "commune" => "Molenbeek",
             "created_at"=>now()

@@ -1,7 +1,14 @@
 @extends('layouts.app')
 @section('content')
     @include('partials.header')
-    @include('partials.banner')
+    <div class="banner container mx-auto">
+        <div class="row p-5 py-2">
+            <div class="col-12 p-0">
+                <h1 class="">{{$title1}} Subheading</h1>
+                <p class="bg-secondary p-3"><span class="text-primary">Home<span> / {{$title1}} </p>
+            </div>
+        </div>
+    </div>
     <section class="container d-flex justify-content-center">
         <div class="row p-5 py-2">
             <div class="col-6 p-0 pe-3 pb-3">

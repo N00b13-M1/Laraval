@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset("css/app.css") }}">
     <title>Exercise-5-reproduction</title>
-
 </head>
 <body>
     @yield('content')

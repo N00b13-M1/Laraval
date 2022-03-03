@@ -1,8 +1,15 @@
 @extends('layouts.app')
 @section('content')
     @include('partials.header')
+    <div class="banner container mx-auto">
+        <div class="row p-5 py-2">
+            <div class="col-12 p-0">
+                <h1 class="">{{$title}} Subheading</h1>
+                <p class="bg-secondary p-3"><span class="text-primary">Home<span> / {{$title}} </p>
+            </div>
+        </div>
+    </div>
     <section class="container">
-
         <div class="row p-5 py-2">
             <p class="p-0 m-0">
                 {{ url()->current() }} {{ url()->current() }} {{ url()->previous() }}
