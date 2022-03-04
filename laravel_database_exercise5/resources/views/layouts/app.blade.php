@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/app.css">
+    <title>Exercise5</title>
 </head>
 <body>
-    <p>
-        test
-    </p>
+    <h1>Test</h1>
+    <p>        @foreach ($users as $user)
+        {{ $user}}
+        @endforeach</p>
+    <script src="js/app.js"></script>
 </body>
 </html>

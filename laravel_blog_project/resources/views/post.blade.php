@@ -14,6 +14,9 @@
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam autem enim laborum quia obcaecati sunt facilis unde tenetur repellat ullam in repudiandae at officia illum qui, necessitatibus possimus porro doloremque.
         </p>
     </article>
+    @foreach ($collection as $item)
+        
+    @endforeach
     <a href="/">Go back</a>
     <script src="js/app.js"></script>
 </body>
