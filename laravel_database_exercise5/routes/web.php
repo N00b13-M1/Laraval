@@ -49,9 +49,7 @@ Route::get('/', function () {
     // dd($userLast)
     // dd($firstUser->nom);
     // dd($users[$users->length -1 ]);
-
     return view('home');
-
 });
 
 Route::get('/articles', function () {
