@@ -38,13 +38,13 @@ Route::get('/', function () {
     $numberOfUsers = User::all()->count();
     // - Affichez deux utilisateurs qui font partie du même pays
     $sameCountry = User::where("pays", "West April")->get();
-    foreach ($sameCountry as $value) {
-        dd($value->nom);
-    }
+    // foreach ($sameCountry as $value) {
+    //     dd($value->nom);
+    // }
     // - Affichez le premier utilisateur qui habite dans un pays spécifique --
     $specificCountry = User::where("pays", "West April")->get()->first;
     // dd($users, $userFirst->nom, $userLast->nom, $userFive, $numberOfUsers, $filterOnName);
-    dd($numberOfUsers, $sameCountry, $specificCountry->nom);
+    // dd($numberOfUsers, $sameCountry, $specificCountry->nom);
     //$userLast= User::all()->last();
     // dd($userLast)
     // dd($firstUser->nom);
