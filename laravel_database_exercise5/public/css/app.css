@@ -11286,3 +11286,21 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  height: 95vh;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  width: 20%;
+  line-height: 25px;
+}
+
+a {
+  color: black;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
