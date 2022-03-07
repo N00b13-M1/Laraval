@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class Nav_linkSeeder extends Seeder
 {
@@ -15,16 +16,34 @@ class Nav_linkSeeder extends Seeder
     public function run()
     {
         DB::table("users")->insert([
-            "nom"=> "Abutaharan",
-            "prenom" => "Elias",
-            "age" => "14",
-            "email" => "elias@molengeek.com",
-            "password" => bcrypt("test"), //Hash::make('mdp) or encrypt("mdp")
-            "numero_de_tel" => "034532312",
-            "commune" => "Molenbeek",
+            "href"=> "#top",
+            "title"=> "Home",
             "created_at"=>now()
         ]);
-        $table->string('title');
-            $table->string('subTitle');
+        DB::table("users")->insert([
+            "href"=> "#features",
+            "title"=> "Features",
+            "created_at"=>now()
+        ]);
+        DB::table("users")->insert([
+            "href"=> "#about",
+            "title"=> "About Us",
+            "created_at"=>now()
+        ]);
+        DB::table("users")->insert([
+            "href"=> "#services",
+            "title"=> "Services",
+            "created_at"=>now()
+        ]);
+        DB::table("users")->insert([
+            "href"=> "#portfolio",
+            "title"=> "Portfolio",
+            "created_at"=>now()
+        ]);
+        DB::table("users")->insert([
+            "href"=> "#contact",
+            "title"=> "Contact Us",
+            "created_at"=>now()
+        ]);
     }
 }

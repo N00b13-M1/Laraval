@@ -16,54 +16,26 @@
                     <div class="item">
                         <div class="portfolio-item">
                             <div class="thumb">
-                                <img src="{{ asset('img/portfolio-01.jpg') }}" alt="">
+                                <img src="" alt="">
                                 <div class="hover-content">
                                     <div class="inner-content">
                                         <a href="#">
-                                            <h4>Awesome Project 101</h4>
+                                            <h4></h4>
                                         </a>
-                                        <span>Marketing</span>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-item">
                             <div class="thumb">
-                                <img src="{{ asset('img/portfolio-04.jpg') }}" alt="">
+                                <img src="" alt="">
                                 <div class="hover-content">
                                     <div class="inner-content">
                                         <a href="#">
-                                            <h4>Awesome Project 102</h4>
+                                            <h4></h4>
                                         </a>
-                                        <span>Branding</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="portfolio-item">
-                            <div class="thumb">
-                                <img src="{{ asset('img/portfolio-02.jpg') }}" alt="">
-                                <div class="hover-content">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>Awesome Project 103</h4>
-                                        </a>
-                                        <span>Consulting</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="thumb">
-                                <img src="{{ asset('img/portfolio-05.jpg') }}" alt="">
-                                <div class="hover-content">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>Awesome Project 104</h4>
-                                        </a>
-                                        <span>Artwork</span>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
@@ -72,13 +44,41 @@
                     <div class="item">
                         <div class="portfolio-item">
                             <div class="thumb">
-                                <img src="{{ asset('img/portfolio-03.jpg') }}" alt="">
+                                <img src="" alt="">
                                 <div class="hover-content">
                                     <div class="inner-content">
                                         <a href="#">
-                                            <h4>Awesome Project 105</h4>
+                                            <h4></h4>
                                         </a>
-                                        <span>Branding</span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="thumb">
+                                <img src="" alt="">
+                                <div class="hover-content">
+                                    <div class="inner-content">
+                                        <a href="#">
+                                            <h4></h4>
+                                        </a>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <div class="thumb">
+                                <img src="" alt="">
+                                <div class="hover-content">
+                                    <div class="inner-content">
+                                        <a href="#">
+                                            <h4></h4>
+                                        </a>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
@@ -89,9 +89,9 @@
                                 <div class="hover-content">
                                     <div class="inner-content">
                                         <a href="#">
-                                            <h4>Awesome Project 106</h4>
+                                            <h4></h4>
                                         </a>
-                                        <span>Artwork</span>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
@@ -100,26 +100,26 @@
                     <div class="item">
                         <div class="portfolio-item">
                             <div class="thumb">
-                                <img src="{{ asset('img/portfolio-04.jpg') }}" alt="">
+                                <img src="" alt="">
                                 <div class="hover-content">
                                     <div class="inner-content">
                                         <a href="#">
-                                            <h4>Awesome Project 107</h4>
+                                            <h4></h4>
                                         </a>
-                                        <span>Creative</span>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-item">
                             <div class="thumb">
-                                <img src="{{ asset('img/portfolio-01.jpg') }}" alt="">
+                                <img src="" alt="">
                                 <div class="hover-content">
                                     <div class="inner-content">
                                         <a href="#">
-                                            <h4>Awesome Project 108</h4>
+                                            <h4></h4>
                                         </a>
-                                        <span>Consulting</span>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>

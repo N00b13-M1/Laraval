@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('portfolio_items', function (Blueprint $table) {
-            $table->string('name');
             $table->string('image');
+            $table->string('name');
             $table->string('category');
             $table->string('link')->default('#');
             $table->timestamps();

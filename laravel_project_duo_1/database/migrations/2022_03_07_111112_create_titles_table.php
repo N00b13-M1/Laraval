@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('titles', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('subTitle');
+            $table->string('title-portion1');
+            $table->string('title-portion2');
+            $table->string('title-portion3');
+            $table->string('span1');
+            $table->string('span2');
+            $table->string('subtitle');
             $table->timestamps();
         });
     }

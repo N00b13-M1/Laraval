@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('awards');
             $table->text('description');
             $table->string('button');
+            $table->string('button_link');
+            $table->string('span');
+            $table->string('span_href');
             $table->timestamps();
         });
     }

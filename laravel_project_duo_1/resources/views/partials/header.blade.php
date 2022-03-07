@@ -6,7 +6,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/" class="logo">
-                            <h4>SEO Dream <img src="{{ asset('img/logo-icon.png') }}" alt=""></h4>
+                            <h4>SEO Dream <img src="" alt=""></h4>
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
