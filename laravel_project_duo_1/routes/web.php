@@ -1,13 +1,7 @@
 <?php
 
-use App\Models\About_item;
-use App\Models\Banner;
-use App\Models\Feature;
-use App\Models\Nav_item;
-use App\Models\Nav_link;
-use App\Models\Portfolio_item;
-use App\Models\Service;
-use App\Models\Title;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\BackOfficeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,29 +15,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [WelcomeController::class, 'welcome']);
 
-    $banner = Banner::first();
-    $about_items = About_item::first();
-    $features = Feature::shuffle();
-    $nav_items = Nav_item::first();
-    $nav_links = Nav_link::all();
-    $portfolio_items = Portfolio_item::all();
-    $titles = Title::all();
-    $services = Service::shuffle();
+// Route::get('/', function () {
 
-    return view('welcome', compact(
-        'banner',                          
-        'about_items',
-        'features',
-        'nav_items',
-        'nav_links',
-        'portfolio_items',
-        'titles',
-        'services'
-                                ));
-});
+//     $banner = Banner::first();
+//     $about_items = About_item::first();
+//     $features = Feature::shuffle();
+//     $nav_items = Nav_item::first();
+//     $nav_links = Nav_link::all();
+//     $portfolio_items = Portfolio_item::all();
+//     $titles = Title::all();
+//     $services = Service::shuffle();
 
-Route::get("/backoffice", function(){
-    return view('pages/backoffice');
-});
+//     return view('welcome', compact(
+//         'banner',                          
+//         'about_items',
+//         'features',
+//         'nav_items',
+//         'nav_links',
+//         'portfolio_items',
+//         'titles',
+//         'services'
+//                                 ));
+// });
+
+Route::get("/backoffice", [BackOfficeController::class, 'backoffice']); 

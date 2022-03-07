@@ -4,7 +4,7 @@
             <div class="col-lg-5">
                 <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
                     <h6>{{ $titles[2]->subtitle }}</h6>
-                    <h2>{{ $titles[2]->title_portion1}}<em>{{ $titles[2]->span1}}</em> {{ $titles[2]->title_portion2}} <span>{{ $titles[2]->span2}}</span></h2>
+                    <h2>{{ $titles[2]->title_portion1}} <em>{{ $titles[2]->span1}}</em> {{ $titles[2]->title_portion2}} <span>{{ $titles[2]->span2}}</span></h2>
                 </div>
             </div>
         </div>
