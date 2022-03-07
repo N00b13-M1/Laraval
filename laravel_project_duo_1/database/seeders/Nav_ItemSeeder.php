@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class Nav_ItemSeeder extends Seeder
+class Nav_itemSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,9 +15,9 @@ class Nav_ItemSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("users")->insert([
+        DB::table("nav_items")->insert([
             "title"=> "SEO Dream",
-            "path" => "asset('img/logo-icon.png')",
+            "path" => 'img/logo-icon.png',
             "created_at"=>now()
         ]);
 

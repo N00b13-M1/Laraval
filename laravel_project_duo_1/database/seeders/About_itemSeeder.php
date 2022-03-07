@@ -15,8 +15,8 @@ class About_itemSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("users")->insert([
-            "image"=> asset('img/about-left-image.png'),
+        DB::table("about_items")->insert([
+            "image" => 'img/about-left-image.png',
             "projectsFinished" => "750+",
             "happyClients" => "340+",
             "awards" => "128+",

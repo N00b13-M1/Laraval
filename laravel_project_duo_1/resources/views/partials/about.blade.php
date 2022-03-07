@@ -3,39 +3,37 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="left-image wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <img src="{{ asset('img/about-left-image.png') }}" alt="">
+                    <img src="{{ asset($about_items->image) }}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="section-heading">
-                    <h6>About Us</h6>
-                    <h2>Top <em>marketing</em> agency &amp; consult your website <span>with us</span></h2>
+                    <h6>{{ $titles[0]->subtitle }}</h6>
+                    <h2>{{ $titles[0]->title_portion1 }}<em>{{ $titles[0]->span1 }}</em>{{ $titles[0]->title_portion2}}<span>{{ $titles[0]->span2 }}</span></h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-4">
                         <div class="about-item">
-                            <h4>750+</h4>
+                            <h4>{{ $about_items->projectsFinished }}</h4>
                             <h6>projects finished</h6>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <div class="about-item">
-                            <h4>340+</h4>
+                            <h4>{{ $about_items->happyClients }}</h4>
                             <h6>happy clients</h6>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <div class="about-item">
-                            <h4>128+</h4>
+                            <h4>{{ $about_items->awards }}</h4>
                             <h6>awards</h6>
                         </div>
                     </div>
                 </div>
-                <p><a rel="nofollow" href="https://templatemo.com/tm-563-seo-dream" target="_parent">SEO Dream</a>
-                    is free digital marketing CSS template provided by TemplateMo website. You are allowed to use
-                    this template for your business websites. Please DO NOT redistribute this template ZIP file on
-                    any Free CSS collection websites. You may contact us for more information. Thank you.</p>
-                <div class="main-green-button"><a href="#">Discover company</a></div>
+                <p><a rel="nofollow" href="{{ $about_items->span_href }}" target="_parent">{{ $about_items->span }}</a>
+                    {{ $about_items->description }}</p>
+                <div class="main-green-button"><a href="{{ $about_items->button_link }}">{{ $about_items->button }}</a></div>
             </div>
         </div>
     </div>

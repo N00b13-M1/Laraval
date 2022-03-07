@@ -3,33 +3,38 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                    <h6>Our Services</h6>
-                    <h2>Discover What We Do &amp; <span>Offer</span> To Our <em>Clients</em></h2>
+                    <h6>{{ $titles[1]->subtitle }}</h6>
+                    <h2>{{ $titles[1]->title_portion1}} <span>{{ $titles[1]->span1}}</span> {{ $titles[1]->title_portion2}} <em>{{ $titles[1]->span2}}</em></h2>
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
+            @foreach ($services as $item)
             <div class="col-lg-4">
-                <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="{{ $item["delay"] }}">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="icon">
-                                <img src="{{ asset('./img/service-icon-01.png') }}" alt="">
+                                <img src="{{ $item["image"] }}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-8">
                             <div class="right-content">
-                                <h4>Similar Websites</h4>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                    dormque laudantium.</p>
+                                <h4>
+                                    {{ $item["name"]}}
+                                </h4>
+                                <p>
+                                    {{ $item["description"] }}
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            @endforeach
+            {{-- <div class="col-lg-4">
                 <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
                     <div class="row">
                         <div class="col-lg-4">
@@ -118,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('features', function (Blueprint $table) {
             $table->id();
             $table->string('numero');
-            $table->string('image');
+            $table->string('class');
+            $table->string('subClass');
             $table->string('name');
+            $table->string('data_wow_delay');
             $table->string('description');
-            $table->string('percentage');
+            $table->integer('percentage');
             $table->string('technology');
             $table->timestamps();
         });

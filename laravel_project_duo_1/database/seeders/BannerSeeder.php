@@ -15,16 +15,16 @@ class BannerSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("users")->insert([
+        DB::table("banners")->insert([
             "title"=> "SEO & Digital Marketing Agency",
             "button" => "Get Your Quote",
             "button_link" => "#contact",
             "agencyStatus" => "Ready Work",
             "price" => "$720/Month",
             "schedules" => "$450/Meeting",
-            "image" => asset('img/banner-right-image.png'),
-            "image_after" => asset('img/banner-dec-left.png'),
-            "image_before" => asset('img/banner-dec-right.png'),
+            "image" => 'img/banner-right-image.png',
+            "image_after" => 'img/banner-dec-left.png',
+            "image_before" => 'img/banner-dec-right.png',
             "created_at"=>now()
         ]);
     }

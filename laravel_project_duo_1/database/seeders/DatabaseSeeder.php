@@ -22,8 +22,9 @@ class DatabaseSeeder extends Seeder
             FeatureSeeder::class,
             Nav_ItemSeeder::class,
             Nav_linkSeeder::class,
-            PortfolioSeeder::class,
+            Portfolio_itemSeeder::class,
             TitleSeeder::class,
+            ServiceSeeder::class,
         ]);
     }
 }
