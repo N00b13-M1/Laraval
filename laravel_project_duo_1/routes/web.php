@@ -3,6 +3,14 @@
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\BackOfficeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\About_itemController;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\Nav_itemController;
+use App\Http\Controllers\Nav_linkController;
+use App\Http\Controllers\Portfolio_itemController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TitleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,27 +25,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'welcome']);
 
-// Route::get('/', function () {
-
-//     $banner = Banner::first();
-//     $about_items = About_item::first();
-//     $features = Feature::shuffle();
-//     $nav_items = Nav_item::first();
-//     $nav_links = Nav_link::all();
-//     $portfolio_items = Portfolio_item::all();
-//     $titles = Title::all();
-//     $services = Service::shuffle();
-
-//     return view('welcome', compact(
-//         'banner',                          
-//         'about_items',
-//         'features',
-//         'nav_items',
-//         'nav_links',
-//         'portfolio_items',
-//         'titles',
-//         'services'
-//                                 ));
-// });
 
 Route::get("/backoffice", [BackOfficeController::class, 'backoffice']); 
+Route::get("/backoffice/about_items", [About_itemController::class, 'index']); 
+Route::get("/backoffice/banners", [BannerController::class, 'index']); 
+Route::get("/backoffice/features", [FeatureController::class, 'index']); 
+Route::get("/backoffice/nav_items", [Nav_itemController::class, 'index']); 
+Route::get("/backoffice/nav_links", [Nav_linkController::class, 'index']);
+Route::get("/backoffice/portfolio_items", [Portfolio_itemController::class, 'index']); 
+Route::get("/backoffice/services", [ServiceController::class, 'index']);
+Route::get("/backoffice/titles", [TitleController::class, 'index']);  
+

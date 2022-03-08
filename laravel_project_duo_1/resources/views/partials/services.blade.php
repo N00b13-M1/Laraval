@@ -4,7 +4,7 @@
             <div class="col-lg-6 offset-lg-3">
                 <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
                     <h6>{{ $titles[1]->subtitle }}</h6>
-                    <h2>{{ $titles[1]->title_portion1}} <span>{{ $titles[1]->span1}}</span> {{ $titles[1]->title_portion2}} <em>{{ $titles[1]->span2}}</em></h2>
+                    <h2>{!! $titles[1]->fulltitle !!}</h2>
                 </div>
             </div>
         </div>

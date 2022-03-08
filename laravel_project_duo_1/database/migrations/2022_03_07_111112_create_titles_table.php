@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('span1');
             $table->string('span2');
             $table->string('subtitle');
+            $table->string('fulltitle');
             $table->timestamps();
         });
     }

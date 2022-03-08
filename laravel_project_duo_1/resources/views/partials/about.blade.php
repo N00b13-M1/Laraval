@@ -9,7 +9,7 @@
             <div class="col-lg-6 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
                 <div class="section-heading">
                     <h6>{{ $titles[0]->subtitle }}</h6>
-                    <h2>{{ $titles[0]->title_portion1 }}<em>{{ $titles[0]->span1 }}</em>{{ $titles[0]->title_portion2}}<span>{{ $titles[0]->span2 }}</span></h2>
+                    <h2>{!! $titles[0]->fulltitle !!}</span></h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-4">

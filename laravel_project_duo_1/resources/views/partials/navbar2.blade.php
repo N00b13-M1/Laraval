@@ -11,60 +11,60 @@
             <span class="tooltip">Search</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/backoffice/about_items">
                 <i class='bx bx-grid-alt'></i>
-                <span class="links_name">Dashboard</span>
+                <span class="links_name">About</span>
             </a>
-            <span class="tooltip">Dashboard</span>
+            <span class="tooltip">About</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/backoffice/banners">
                 <i class='bx bx-user'></i>
-                <span class="links_name">User</span>
+                <span class="links_name">Banners</span>
             </a>
-            <span class="tooltip">User</span>
+            <span class="tooltip">Banners</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/backoffice/features">
                 <i class='bx bx-chat'></i>
-                <span class="links_name">Messages</span>
+                <span class="links_name">Features</span>
             </a>
-            <span class="tooltip">Messages</span>
+            <span class="tooltip">Features</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/backoffice/nav_items">
                 <i class='bx bx-pie-chart-alt-2'></i>
-                <span class="links_name">Analytics</span>
+                <span class="links_name">Nav items</span>
             </a>
-            <span class="tooltip">Analytics</span>
+            <span class="tooltip">Nav Items</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/backoffice/nav_links">
                 <i class='bx bx-folder'></i>
-                <span class="links_name">File Manager</span>
+                <span class="links_name">Nav Links</span>
             </a>
-            <span class="tooltip">Files</span>
+            <span class="tooltip">Nav Links</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/backoffice/portfolio_items">
                 <i class='bx bx-cart-alt'></i>
-                <span class="links_name">Order</span>
+                <span class="links_name">Tables</span>
             </a>
-            <span class="tooltip">Order</span>
+            <span class="tooltip">Portfolio Items</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/backoffice/titles">
                 <i class='bx bx-heart'></i>
-                <span class="links_name">Saved</span>
+                <span class="links_name">Titles</span>
             </a>
-            <span class="tooltip">Saved</span>
+            <span class="tooltip">Titles</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/backoffice/services">
                 <i class='bx bx-cog'></i>
-                <span class="links_name">Setting</span>
+                <span class="links_name">Services</span>
             </a>
-            <span class="tooltip">Setting</span>
+            <span class="tooltip">Services</span>
         </li>
         <li class="profile">
             <div class="profile-details">

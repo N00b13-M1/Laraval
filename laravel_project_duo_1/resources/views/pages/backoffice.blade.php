@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('partials.navbar2')
-    <h1 class="text-center">Bienvenu au backoffice</h1>
+    <div class="h1 d-flex justify-content-center align-items-center">
+        <h1 class="text-center text-danger">Bienvenu au backoffice</h1>
+    </div>
 @endsection

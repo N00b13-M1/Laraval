@@ -23,7 +23,15 @@ class WelcomeController extends Controller
         $portfolio_items = Portfolio_item::all();
         $titles = Title::all();
         $services = Service::shuffle();
-        // $replace = str_replace();
+
+
+        foreach ($titles as $title) {
+            
+            $title->fulltitle = str_replace([
+                "(", ")","[","]"
+            ],["<em>","</em>", "<span>","</span>"],
+            $title->fulltitle);
+        }
 
         return view('welcome', compact(
             'banner',                          
@@ -33,7 +41,8 @@ class WelcomeController extends Controller
             'nav_links',
             'portfolio_items',
             'titles',
-            'services'
+            'services',
+            'title'
                                     ));
     }
 }
