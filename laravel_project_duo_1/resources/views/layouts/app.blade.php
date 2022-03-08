@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{ asset('css/owl.css') }}">
     {{-- <link rel="stylesheet" href='@fortawesome/fontawesome-free/css/all.min.css'> --}}
     
+    <!--Navbar2-->
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
+    <link rel="stylesheet" href="{{ asset('css/backoffice.css') }}">
     <!--
 TemplateMo 563 SEO Dream
 
@@ -54,6 +57,7 @@ https://templatemo.com/tm-563-seo-dream
 <script src="{{ asset('js/animation.js') }}"></script>
 <script src="{{ asset('js/imagesloaded.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('js/navbar2.js') }}"></script>
 
 </body>
 </html>

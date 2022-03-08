@@ -23,6 +23,7 @@ class WelcomeController extends Controller
         $portfolio_items = Portfolio_item::all();
         $titles = Title::all();
         $services = Service::shuffle();
+        // $replace = str_replace();
 
         return view('welcome', compact(
             'banner',                          
