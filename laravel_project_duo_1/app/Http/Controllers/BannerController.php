@@ -14,7 +14,7 @@ class BannerController extends Controller
         $columns = Schema::getColumnListing('banners');
         $datas = Banner::all();
 
-        return view('/pages/tables', compact('columns','datas', 'table'));
+        return view('back/pages/tables', compact('columns','datas', 'table'));
     }
     public function destroy($id){
         $item = Banner::find($id);

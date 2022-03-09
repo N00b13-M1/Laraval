@@ -1,13 +1,13 @@
-@extends('layouts.app')
+@extends('front/layouts.app')
 @section('content')
-    @include('partials.header')
-    @include('partials.banner')
-    @include('partials.features')
-    @include('partials.about')
-    @include('partials.services')
-    @include('partials.portfolio')
-    @include('partials.contact')
-    @include('partials.footer')
+    @include('front/partials.header')
+    @include('front/partials.banner')
+    @include('front/partials.features')
+    @include('front/partials.about')
+    @include('front/partials.services')
+    @include('front/partials.portfolio')
+    @include('front/partials.contact')
+    @include('front/partials.footer')
 @endsection
 
 

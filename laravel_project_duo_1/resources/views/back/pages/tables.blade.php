@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('back/layouts.app')
 @section('content')
-    @include('partials.navbar2')
+    @include('back/partials.navbar2')
 
     <table class="table table-dark ms-5">
         <thead>

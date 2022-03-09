@@ -14,52 +14,37 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/templatemo-seo-dream.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/animated.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/owl.css') }}">
-    {{-- <link rel="stylesheet" href='@fortawesome/fontawesome-free/css/all.min.css'> --}}
-    
+    <link rel="stylesheet" href='@fortawesome/fontawesome-free/css/all.min.css'>
     <!--Navbar2-->
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
     <link rel="stylesheet" href="{{ asset('css/backoffice.css') }}">
-    <!--
-TemplateMo 563 SEO Dream
+ 
+{{-- TemplateMo 563 SEO Dream
 
-https://templatemo.com/tm-563-seo-dream
+https://templatemo.com/tm-563-seo-dream --}}
 
--->
+
 
 </head>
 <body>
-<!-- ***** Preloader Start ***** -->
-<div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-        <span class="dot"></span>
-        <div class="dots">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</div>
-<!-- ***** Preloader End ***** -->
 
-{{-- @include('../partials.header') --}}
+<style>
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+figure, header, nav, section, article, aside, footer, figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+</style>
+
 
 @yield('content')
 
-{{-- @include('../partials.footer') --}}
-
 <!-- Scripts -->
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('js/owl-carousel.js') }}"></script>
-<script src="{{ asset('js/animation.js') }}"></script>
-<script src="{{ asset('js/imagesloaded.js') }}"></script>
-<script src="{{ asset('js/custom.js') }}"></script>
 <script src="{{ asset('js/navbar2.js') }}"></script>
 
 </body>
 </html>
-
-

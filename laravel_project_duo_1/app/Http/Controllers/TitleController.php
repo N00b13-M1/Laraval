@@ -14,7 +14,7 @@ class TitleController extends Controller
         $columns = Schema::getColumnListing('titles');
         $datas= Title::all();
 
-        return view('/pages/tables',compact('columns', 'datas', 'table'));
+        return view('back/pages/tables',compact('columns', 'datas', 'table'));
     }
 
     public function destroy($id){

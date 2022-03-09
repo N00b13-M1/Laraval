@@ -15,7 +15,7 @@ class About_itemController extends Controller
         $columns = Schema::getColumnListing('about_items');
         $datas = About_item::all();
 
-        return view('/pages/tables', compact('columns', 'datas', 'table'));
+        return view('back/pages/tables', compact('columns', 'datas', 'table'));
     }
     public function destroy($id){
         $item = About_item::find($id);

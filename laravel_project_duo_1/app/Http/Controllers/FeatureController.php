@@ -14,7 +14,7 @@ class FeatureController extends Controller
         $columns = Schema::getColumnListing('features');
         $datas = Feature::all();
 
-        return view('/pages/tables', compact('columns','datas', 'table'));
+        return view('back/pages/tables', compact('columns','datas', 'table'));
     }
 
     public function destroy($id){

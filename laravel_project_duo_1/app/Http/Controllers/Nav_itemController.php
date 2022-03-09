@@ -14,7 +14,7 @@ class Nav_itemController extends Controller
         $columns = Schema::getColumnListing('nav_items');
         $datas= Nav_item::all();
 
-        return view('/pages/tables',compact('columns', 'datas', 'table'));
+        return view('back/pages/tables',compact('columns', 'datas', 'table'));
     }
 
     public function destroy($id){

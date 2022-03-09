@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class About_item extends Model
 {
     use HasFactory;
+
+    protected $hidden = [
+        "updated_at"
+    ];
 }

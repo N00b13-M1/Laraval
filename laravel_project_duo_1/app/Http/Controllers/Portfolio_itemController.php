@@ -14,7 +14,7 @@ class Portfolio_itemController extends Controller
         $columns = Schema::getColumnListing('portfolio_items');
         $datas= Portfolio_item::all();
 
-        return view('/pages/tables',compact('columns', 'datas', 'table'));
+        return view('back/pages/tables',compact('columns', 'datas', 'table'));
     }
 
     public function destroy($id){

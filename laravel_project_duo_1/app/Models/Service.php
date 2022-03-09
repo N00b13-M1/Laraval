@@ -25,6 +25,10 @@ class Service extends Model
 
         return $arr;
     }
+
+    protected $hidden = [
+        "updated_at"
+    ];
 }
 
 
