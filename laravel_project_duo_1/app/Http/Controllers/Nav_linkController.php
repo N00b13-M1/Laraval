@@ -10,9 +10,15 @@ class Nav_linkController extends Controller
 {
     public function index(){
 
+        $table = "nav_links";
         $columns = Schema::getColumnListing('nav_links');
         $datas= Nav_link::all();
 
-        return view('/pages/tables',compact('columns', 'datas'));
+        return view('/pages/tables',compact('columns', 'datas', 'table'));
+    }
+    public function destroy($id){
+        $item = Nav_link::find($id);
+        $item->delete();
+        return redirect()->back();
     }
 }

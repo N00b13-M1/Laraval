@@ -10,9 +10,16 @@ class Nav_itemController extends Controller
 {
     public function index(){
 
+        $table = 'nav_items';
         $columns = Schema::getColumnListing('nav_items');
         $datas= Nav_item::all();
 
-        return view('/pages/tables',compact('columns', 'datas'));
+        return view('/pages/tables',compact('columns', 'datas', 'table'));
+    }
+
+    public function destroy($id){
+        $item = Nav_item::find($id);
+        $item->delete();
+        return redirect()->back();
     }
 }

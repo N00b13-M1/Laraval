@@ -25,14 +25,28 @@ use App\Http\Controllers\TitleController;
 
 Route::get('/', [WelcomeController::class, 'welcome']);
 
+Route::get("/backoffice", [BackOfficeController::class, 'backoffice']);
+ 
+Route::get("/backoffice/about_items", [About_itemController::class, 'index'])->name("about_items.index");
+Route::post("/backoffice/about_items/{id}/delete", [About_itemController::class, "destroy"])->name("about_items.destroy");
 
-Route::get("/backoffice", [BackOfficeController::class, 'backoffice']); 
-Route::get("/backoffice/about_items", [About_itemController::class, 'index']); 
 Route::get("/backoffice/banners", [BannerController::class, 'index']); 
-Route::get("/backoffice/features", [FeatureController::class, 'index']); 
-Route::get("/backoffice/nav_items", [Nav_itemController::class, 'index']); 
-Route::get("/backoffice/nav_links", [Nav_linkController::class, 'index']);
-Route::get("/backoffice/portfolio_items", [Portfolio_itemController::class, 'index']); 
-Route::get("/backoffice/services", [ServiceController::class, 'index']);
-Route::get("/backoffice/titles", [TitleController::class, 'index']);  
+Route::post("/backoffice/banners/{id}/delete", [BannerController::class, "destroy"])->name("banners.destroy");
 
+Route::get("/backoffice/features", [FeatureController::class, 'index']); 
+Route::post("/backoffice/features/{id}/delete", [FeatureController::class, "destroy"])->name("features.destroy");
+
+Route::get("/backoffice/nav_items", [Nav_itemController::class, 'index']); 
+Route::post("/backoffice/nav_items/{id}/delete", [Nav_ItemController::class, "destroy"])->name("nav_items.destroy");
+
+Route::get("/backoffice/nav_links", [Nav_linkController::class, 'index']);
+Route::post("/backoffice/nav_links/{id}/delete", [Nav_linkController::class, "destroy"])->name("nav_links.destroy");
+
+Route::get("/backoffice/portfolio_items", [Portfolio_itemController::class, 'index']); 
+Route::post("/backoffice/portfolio_items/{id}/delete", [Portfolio_itemController::class, "destroy"])->name("portfolio_items.destroy");
+
+Route::get("/backoffice/services", [ServiceController::class, 'index']);
+Route::post("/backoffice/services/{id}/delete", [ServiceController::class, "destroy"])->name("services.destroy");
+
+Route::get("/backoffice/titles", [TitleController::class, 'index']);  
+Route::post("/backoffice/titles/{id}/delete", [TitleController::class, "destroy"])->name("titles.destroy");

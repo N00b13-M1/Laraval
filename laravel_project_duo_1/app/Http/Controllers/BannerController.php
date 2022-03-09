@@ -10,9 +10,15 @@ class BannerController extends Controller
 {
     public function index(){
 
+        $table = "banners";
         $columns = Schema::getColumnListing('banners');
         $datas = Banner::all();
 
-        return view('/pages/tables', compact('columns','datas'));
+        return view('/pages/tables', compact('columns','datas', 'table'));
+    }
+    public function destroy($id){
+        $item = Banner::find($id);
+        $item->delete();
+        return redirect()->back();
     }
 }

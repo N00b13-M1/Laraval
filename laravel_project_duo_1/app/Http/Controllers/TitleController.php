@@ -10,9 +10,16 @@ class TitleController extends Controller
 {
     public function index(){
 
+        $table = "titles";
         $columns = Schema::getColumnListing('titles');
         $datas= Title::all();
 
-        return view('/pages/tables',compact('columns', 'datas'));
+        return view('/pages/tables',compact('columns', 'datas', 'table'));
+    }
+
+    public function destroy($id){
+        $item = Title::find($id);
+        $item->delete();
+        return redirect()->back();
     }
 }
