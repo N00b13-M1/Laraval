@@ -22,4 +22,15 @@ class About_itemController extends Controller
         $item->delete();
         return redirect()->back();
     }
+
+    public function edit($id){
+        $item = About_item::find($id);
+        return view("back/pages/edit", compact("item"));
+    }
+
+    public function update($id){
+        
+    }
 }
+
+

@@ -7,7 +7,7 @@ use App\Models\User;
 
 class UsersController extends Controller
 {
-    public function users(){
+    public function index(){
         $users = User::all();
         //     // //- Affichez tous les utilisateurs
 //     $users = User::all();

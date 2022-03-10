@@ -26,9 +26,13 @@ use App\Http\Controllers\TitleController;
 Route::get('/', [WelcomeController::class, 'welcome']);
 
 Route::get("/backoffice", [BackOfficeController::class, 'backoffice']);
- 
-Route::get("/backoffice/about_items", [About_itemController::class, 'index'])->name("about_items.index");
+
+Route::get("/backoffice/about_items", [About_itemController::class, 'index']);
+
 Route::post("/backoffice/about_items/{id}/delete", [About_itemController::class, "destroy"])->name("about_items.destroy");
+
+Route::get("/back/about_items/{id}/edit", [About_itemController::class, "edit"])->name("about_items.edit");
+Route::get("/back/about_items/{id}/update", [About_itemController::class, "update"])->name("about_items.update");
 
 Route::get("/backoffice/banners", [BannerController::class, 'index']); 
 Route::post("/backoffice/banners/{id}/delete", [BannerController::class, "destroy"])->name("banners.destroy");
@@ -50,3 +54,4 @@ Route::post("/backoffice/services/{id}/delete", [ServiceController::class, "dest
 
 Route::get("/backoffice/titles", [TitleController::class, 'index']);  
 Route::post("/backoffice/titles/{id}/delete", [TitleController::class, "destroy"])->name("titles.destroy");
+

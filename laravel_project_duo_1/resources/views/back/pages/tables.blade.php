@@ -19,16 +19,4 @@
 
                     @foreach ($columns as $column)
                         <td>{{ $data->$column }}</td>
-                    @endforeach
-
-                    <th>
-                        <form action="{{ route("$table.destroy", $data->id) }}" method="post">
-                            @csrf
-                                <button class="btn btn-danger type=" type="submit">Delete</button>
-                        </form>
-                    </th>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-@endsection
+                    @endforeach6

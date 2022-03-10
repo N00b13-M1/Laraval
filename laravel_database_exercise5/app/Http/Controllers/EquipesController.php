@@ -7,7 +7,7 @@ use App\Models\Equipe;
 
 class EquipesController extends Controller
 {
-    public function equipes(){
+    public function index(){
         $equipes = Equipe::all();
         return view('/pages/equipes',compact('equipes'));
     }

@@ -26,28 +26,28 @@ use App\Http\Controllers\UsersController;
 //     return view('home');
 // });
 
-Route::get('/', [HomeController::class, 'home']);
+Route::get('/', [HomeController::class, 'index']);
 
 // Route::get('/articles', function () {
 //     $articles = Article::all();
 //     return view('/pages/articles',compact('articles'));
 // });
 
-Route::get('/articles', [ArticlesController::class, 'articles']);
+Route::get('/articles', [ArticlesController::class, 'index']);
 
 // Route::get('/equipes', function () {
 //     $equipes = Equipe::all();
 //     return view('/pages/equipes', compact('equipes'));
 // });
 
-Route::get('/equipes', [EquipesController::class, 'equipes']);
+Route::get('/equipes', [EquipesController::class, 'index']);
 
 // Route::get('/portfolios', function () {
 //     $portfolios = Portfolio::all();
 //     return view('/pages/portfolios', compact('portfolios') );
 // });
 
-Route::get('/portfolios', [PortfoliosController::class, 'portfolios']);
+Route::get('/portfolios', [PortfoliosController::class, 'index']);
 
 // Route::get('/users', function () {
 //     $users = User::all();
@@ -55,5 +55,5 @@ Route::get('/portfolios', [PortfoliosController::class, 'portfolios']);
 // });
 
 
-Route::get('/users', [UsersController::class, 'users']);
+Route::get('/users', [UsersController::class, 'index']);
 
