@@ -22,4 +22,12 @@ class TitleController extends Controller
         $item->delete();
         return redirect()->back();
     }
+
+    public function edit($id){
+        $columns = Schema::getColumnListing('titles');
+        $table = "titles";
+        $item = Title::find($id);
+        return view("back/pages/edit", compact("item", "columns", "table"));
+    }
 }
+

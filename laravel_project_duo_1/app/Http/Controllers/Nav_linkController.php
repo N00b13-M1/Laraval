@@ -21,4 +21,11 @@ class Nav_linkController extends Controller
         $item->delete();
         return redirect()->back();
     }
+
+    public function edit($id){
+        $table = "nav_links";
+        $columns = Schema::getColumnListing('nav_links');
+        $item = Nav_link::find($id);
+        return view("back/pages/edit", compact("item", "columns", "table"));
+    }
 }

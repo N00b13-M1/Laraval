@@ -1,7 +1,6 @@
 @extends('back/layouts.app')
 @section('content')
     @include('back/partials.navbar2')
-
     <table class="table table-dark ms-5">
         <thead>
             <tr>
@@ -10,6 +9,7 @@
                     <th scope="col">{{ $column }}</th>
                 @endforeach
                 <th scope="col"><i class="fa fa-trash" aria-hidden="true"></i></th>
+                <th scope="col"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -19,4 +19,11 @@
 
                     @foreach ($columns as $column)
                         <td>{{ $data->$column }}</td>
-                    @endforeach6
+                    @endforeach
+
+                    <td><a href="{{ route("$table.destroy", ['id' => $data->id]) }}">delete</a></td>
+                    <td><a href="/edit/{{ $table }}/{{ $data->id }}">edit</a></td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>

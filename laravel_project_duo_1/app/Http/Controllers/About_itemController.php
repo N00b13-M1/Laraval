@@ -24,12 +24,28 @@ class About_itemController extends Controller
     }
 
     public function edit($id){
+        $table = "about_items";
+        $columns = Schema::getColumnListing('about_items');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
         $item = About_item::find($id);
-        return view("back/pages/edit", compact("item"));
+        return view("back/pages/edit", compact("item", "columns", "table"));
     }
 
-    public function update($id){
+    public function update(Request $request, $id){
+        $columns = Schema::getColumnListing('about_items');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        $item = About_item::find($id);
         
+        foreach ($columns as $column) {
+            $item[$column] = $request[$column];
+        }
+        $item->save();
+        return view("back/pages/backoffice");
+        // return redirect()->back()->back();
     }
 }
 

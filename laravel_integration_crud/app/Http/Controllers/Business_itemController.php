@@ -12,3 +12,5 @@ class Business_itemController extends Controller
         return view('home', compact('data'));
     }
 }
+
+wdfwwefwfwddfwfwd

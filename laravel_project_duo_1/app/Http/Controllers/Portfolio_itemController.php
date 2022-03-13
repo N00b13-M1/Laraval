@@ -22,4 +22,10 @@ class Portfolio_itemController extends Controller
         $item->delete();
         return redirect()->back();
     }
+    public function edit($id){
+        $table= "portfolio_items";
+        $columns = Schema::getColumnListing('portfolio_items');
+        $item = Portfolio_item::find($id);
+        return view("back/pages/edit", compact("item", "columns", "table"));
+    }
 }
