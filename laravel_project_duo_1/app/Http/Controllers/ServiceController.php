@@ -26,7 +26,50 @@ class ServiceController extends Controller
     public function edit($id){
         $table = "services";
         $columns = Schema::getColumnListing('services');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
         $item = Service::find($id);
         return view("back/pages/edit", compact("item", "columns", "table"));
+    }
+
+    public function update(Request $request, $id){
+        $columns = Schema::getColumnListing('services');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        $item = Service::find($id);
+        
+        foreach ($columns as $column) {
+            $item[$column] = $request[$column];
+        }
+        $item->save();
+        return view("back/pages/backoffice");
+        // return redirect()->back()->back();
+    }
+
+    public function create(){
+        $table = "services";
+        $columns = Schema::getColumnListing('services');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        return view("back/pages/create", compact ("table", "columns"));
+    }
+
+    public function store(Request $request){
+        $columns = Schema::getColumnListing('services');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        $item = new Service();
+        
+        foreach ($columns as $column) {
+            $item[$column] = $request[$column];
+        }
+        $item->save();
+
+
+        return view("back/pages/backoffice");
     }
 }

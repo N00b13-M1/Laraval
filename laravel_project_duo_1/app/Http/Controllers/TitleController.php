@@ -24,10 +24,53 @@ class TitleController extends Controller
     }
 
     public function edit($id){
-        $columns = Schema::getColumnListing('titles');
         $table = "titles";
+        $columns = Schema::getColumnListing('titles');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
         $item = Title::find($id);
         return view("back/pages/edit", compact("item", "columns", "table"));
+    }
+
+    public function update(Request $request, $id){
+        $columns = Schema::getColumnListing('titles');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        $item = Title::find($id);
+        
+        foreach ($columns as $column) {
+            $item[$column] = $request[$column];
+        }
+        $item->save();
+        return view("back/pages/backoffice");
+        // return redirect()->back()->back();
+    }
+
+    public function create(){
+        $table = "titles";
+        $columns = Schema::getColumnListing('titles');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        return view("back/pages/create", compact ("table", "columns"));
+    }
+
+    public function store(Request $request){
+        $columns = Schema::getColumnListing('titles');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        $item = new Title();
+        
+        foreach ($columns as $column) {
+            $item[$column] = $request[$column];
+        }
+        $item->save();
+
+
+        return view("back/pages/backoffice");
     }
 }
 

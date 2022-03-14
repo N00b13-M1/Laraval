@@ -47,6 +47,31 @@ class About_itemController extends Controller
         return view("back/pages/backoffice");
         // return redirect()->back()->back();
     }
+
+    public function create(){
+        $table = "about_items";
+        $columns = Schema::getColumnListing('about_items');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        return view("back/pages/create", compact ("table", "columns"));
+    }
+
+    public function store(Request $request){
+        $columns = Schema::getColumnListing('about_items');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        $item = new About_item();
+        
+        foreach ($columns as $column) {
+            $item[$column] = $request[$column];
+        }
+        $item->save();
+
+
+        return view("back/pages/backoffice");
+    }
 }
 
 

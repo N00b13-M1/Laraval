@@ -2,6 +2,7 @@
 @section('content')
     @include('back/partials.navbar2')
     <table class="table table-dark ms-5">
+        <a href="{{ route("$table.create") }}" class="ms-5 btn btn-success d-block justify-content-center w-25">Create</a>
         <thead>
             <tr>
                 <th scope="col">#</th>

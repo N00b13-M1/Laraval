@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ asset('css/backoffice.css') }}">
+<link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
 <div class="sidebar">
     <div class="logo-details">
         <i class='bx bxl-c-plus-plus icon'></i>
@@ -80,3 +82,4 @@
         </li>
     </ul>
 </div>
+<script src="{{ asset('js/navbar2.js') }}"></script>

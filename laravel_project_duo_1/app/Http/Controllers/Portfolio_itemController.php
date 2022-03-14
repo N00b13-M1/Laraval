@@ -22,10 +22,55 @@ class Portfolio_itemController extends Controller
         $item->delete();
         return redirect()->back();
     }
+
+
     public function edit($id){
-        $table= "portfolio_items";
+        $table = "portfolio_items";
         $columns = Schema::getColumnListing('portfolio_items');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
         $item = Portfolio_item::find($id);
         return view("back/pages/edit", compact("item", "columns", "table"));
+    }
+
+    public function update(Request $request, $id){
+        $columns = Schema::getColumnListing('portfolio_items');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        $item = Portfolio_item::find($id);
+        
+        foreach ($columns as $column) {
+            $item[$column] = $request[$column];
+        }
+        $item->save();
+        return view("back/pages/backoffice");
+        // return redirect()->back()->back();
+    }
+
+    public function create(){
+        $table = "portfolio_items";
+        $columns = Schema::getColumnListing('portfolio_items');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        return view("back/pages/create", compact ("table", "columns"));
+    }
+
+    public function store(Request $request){
+        $columns = Schema::getColumnListing('portfolio_items');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        $item = new Portfolio_item();
+        
+        foreach ($columns as $column) {
+            $item[$column] = $request[$column];
+        }
+        $item->save();
+
+
+        return view("back/pages/backoffice");
     }
 }

@@ -25,7 +25,50 @@ class Nav_linkController extends Controller
     public function edit($id){
         $table = "nav_links";
         $columns = Schema::getColumnListing('nav_links');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
         $item = Nav_link::find($id);
         return view("back/pages/edit", compact("item", "columns", "table"));
+    }
+
+    public function update(Request $request, $id){
+        $columns = Schema::getColumnListing('nav_links');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        $item = Nav_link::find($id);
+        
+        foreach ($columns as $column) {
+            $item[$column] = $request[$column];
+        }
+        $item->save();
+        return view("back/pages/backoffice");
+        // return redirect()->back()->back();
+    }
+
+    public function create(){
+        $table = "nav_links";
+        $columns = Schema::getColumnListing('nav_links');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        return view("back/pages/create", compact ("table", "columns"));
+    }
+
+    public function store(Request $request){
+        $columns = Schema::getColumnListing('nav_links');
+        array_shift($columns);
+        array_pop($columns);
+        array_pop($columns);
+        $item = new Nav_link();
+        
+        foreach ($columns as $column) {
+            $item[$column] = $request[$column];
+        }
+        $item->save();
+
+
+        return view("back/pages/backoffice");
     }
 }
