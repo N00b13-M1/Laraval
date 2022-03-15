@@ -18,6 +18,12 @@ class UsersController extends Controller
         $user->delete();
         return redirect()->back();
     }
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view("back.pages.users.edit");
+    }
 }
 
 

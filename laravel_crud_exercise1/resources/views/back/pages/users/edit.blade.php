@@ -22,25 +22,18 @@
                                 @foreach ($cars as $item)
                                 <tbody>
                                         <tr>    
-                                        <td>{{ $item->id }}</td>
-                                        <td>{{ $item->make}}</td>
-                                        <td>{{ $item->year }}</td>
-                                        <td>{{ $item->color}}</td>
-                                        <td>{{ $item->prix}}</td>
-                                        <td>{{ $item->reduction}}%</td>
-                                        <td>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->make}}</td>
+                                            <td>{{ $item->year }}</td>
+                                            <td>{{ $item->color}}</td>
+                                            <td>{{ $item->prix}}</td>
+                                            <td>{{ $item->reduction}}%</td>
+                                            <td>
                                                 <form action="{{ route("cars.destroy", $item->id) }}" method="post">
                                                         @csrf
                                                         <button class="btn btn-danger" type="submit">Delete</button>
                                                 </form>
-                                        </td>
-                                        <td>
-                                                <form action="{{ route("cars.edit", $item->id) }}" method="get">
-                                                        @csrf
-                                                        <button class="btn btn-primary" type="submit">Edit</button>
-                                                </form>
-                                        </td>
-
+                                            </td>
                                         </tr>
                                 </tbody>
                                 @endforeach

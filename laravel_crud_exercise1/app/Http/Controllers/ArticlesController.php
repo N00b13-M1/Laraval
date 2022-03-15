@@ -21,4 +21,10 @@ class ArticlesController extends Controller
         return redirect()->back();
     }
 
+    public function edit($id)
+    {
+        $article = Article::find($id);
+        return view("back.pages.articles.edit");
+    }
+
 }

@@ -19,4 +19,10 @@ class CarsController extends Controller
         $car->delete();
         return redirect()->back();
     }
+
+    public function edit($id)
+    {
+        $car = Car::find($id);
+        return view("back.pages.cars.edit");
+    }
 }

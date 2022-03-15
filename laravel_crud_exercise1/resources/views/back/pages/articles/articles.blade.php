@@ -31,6 +31,11 @@
                                                         @csrf
                                                         <button class="btn btn-danger" type="submit">Delete</button>
                                                 </form>
+                                                <td>
+                                                <form action="{{ route("articles.edit", $article->id) }}" method="get">
+                                                        @csrf
+                                                        <button class="btn btn-primary" type="submit">Edit</button>
+                                                </form>
                                                 </td>
                                         </tr>
                                 </tbody>

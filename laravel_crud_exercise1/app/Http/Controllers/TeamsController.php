@@ -18,4 +18,10 @@ class TeamsController extends Controller
         $team->delete();
         return redirect()->back();
     }
+
+    public function edit($id)
+    {
+        $team = Team::find($id);
+        return view("back.pages.teams.edit");
+    }
 }

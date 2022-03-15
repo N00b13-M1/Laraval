@@ -36,3 +36,23 @@ Route::post("back/articles/{id}/delete", [ArticlesController::class, "destroy"])
 Route::post("back/cars/{id}/delete", [CarsController::class, "destroy"])->name("cars.destroy");
 Route::post("back/teams/{id}/delete", [TeamsController::class, "destroy"])->name("teams.destroy");
 Route::post("back/users/{id}/delete", [UsersController::class, "destroy"])->name("users.destroy");
+
+
+//EDIT & UPDATE ROUTE ARTICLES
+Route::get("back/articles/{id}/edit", [ArticlesController::class, "edit"])->name("articles.edit");
+Route::post("back/articles/{id}/update", [ArticlesController::class, "update"])->name("articles.update");
+
+//EDIT & UPDATE ROUTE CARS
+
+Route::get("back/cars/{id}/edit", [CarsController::class, "edit"])->name("cars.edit");
+Route::post("back/cars/{id}/update", [CarsController::class, "update"])->name("cars.update");
+
+//EDIT & UPDATE ROUTE TEAMS
+
+Route::get("back/teams/{id}/edit", [TeamsController::class, "edit"])->name("teams.edit");
+Route::post("back/teams/{id}/update", [TeamsController::class, "update"])->name("teams.update");
+
+//EDIT & UPDATE ROUTE USERS
+
+Route::get("back/users/{id}/edit", [UsersController::class, "edit"])->name("users.edit");
+Route::post("back/users/{id}/update", [UsersController::class, "update"])->name("users.update");

@@ -32,6 +32,12 @@
                                                 <button class="btn btn-danger" type="submit">Delete</button>
                                         </form>
                                 </td>
+                                <td>
+                                        <form action="{{ route("teams.edit", $item->id) }}" method="get">
+                                                @csrf
+                                                <button class="btn btn-primary" type="submit">Edit</button>
+                                        </form>
+                                        </td>
                                 </tr>
                         </tbody>
                         @endforeach
