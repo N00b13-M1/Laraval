@@ -58,6 +58,13 @@ class About_itemController extends Controller
     }
 
     public function store(Request $request){
+        
+        $validated = $request->validate([
+            'image' => 'required',
+            'projectsFinished' => 'required',
+        ]);
+        
+        
         $columns = Schema::getColumnListing('about_items');
         array_shift($columns);
         array_pop($columns);

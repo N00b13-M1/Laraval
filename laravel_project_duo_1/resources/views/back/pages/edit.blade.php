@@ -1,7 +1,7 @@
 @extends('back/layouts.app')
 @section('content')
     @include('back/partials.navbar2')
-    <div class="container">
+    <div class="container edit">
         <form class="mx-5" action="/update/{{ $table }}/{{ $item->id }}" method="post">
             @csrf
             @foreach ($columns as $column)

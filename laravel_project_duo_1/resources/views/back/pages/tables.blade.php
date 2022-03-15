@@ -2,7 +2,7 @@
 @section('content')
     @include('back/partials.navbar2')
     <table class="table table-dark ms-5">
-        <a href="{{ route("$table.create") }}" class="ms-5 btn btn-success d-block justify-content-center w-25">Create</a>
+        <a href="{{ route("$table.create") }}" class="ms-5 btn btn-success d-block justify-content-center w-100">Create</a>
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -22,9 +22,10 @@
                         <td>{{ $data->$column }}</td>
                     @endforeach
 
-                    <td><a href="{{ route("$table.destroy", ['id' => $data->id]) }}">delete</a></td>
-                    <td><a href="/edit/{{ $table }}/{{ $data->id }}">edit</a></td>
+                    <td><a href="{{ route("$table.destroy", ['id' => $data->id]) }}" class="btn btn-danger" >delete</a></td>
+                    <td><a href="/edit/{{ $table }}/{{ $data->id }}" class="btn btn-primary">edit</a></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+@endsection
