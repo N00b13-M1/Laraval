@@ -56,3 +56,24 @@ Route::post("back/teams/{id}/update", [TeamsController::class, "update"])->name(
 
 Route::get("back/users/{id}/edit", [UsersController::class, "edit"])->name("users.edit");
 Route::post("back/users/{id}/update", [UsersController::class, "update"])->name("users.update");
+
+//CREATE & STORE ARTICLES
+
+Route::get("back/articles/create", [ArticlesController::class, "create"])->name("articles.create");
+Route::post("back/articles/store", [ArticlesController::class, "store"])->name("articles.store");
+
+
+//CREATE & STORE CARS
+
+Route::get("back/cars/create", [CarsController::class, "create"])->name("cars.create");
+Route::post("back/cars/store", [CarsController::class, "store"])->name("cars.store");
+
+//CREATE & STORE TEAMS
+
+Route::get("back/teams/create", [TeamsController::class, "create"])->name("teams.create");
+Route::post("back/teams/update", [TeamsController::class, "store"])->name("teams.store");
+
+//CREATE & STORE USERS
+
+Route::get("back/users/create", [UsersController::class, "create"])->name("users.create");
+Route::post("back/users/update", [UsersController::class, "store"])->name("users.store");

@@ -24,7 +24,35 @@ class ArticlesController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
-        return view("back.pages.articles.edit");
+        return view("back.pages.articles.edit", compact('article'));
     }
 
+    public function update($id, Request $request)
+    {
+        $article = Article::find($id);
+        $article->name = $request->name;
+        $article->description = $request->description;
+        $article->author = $request->author;
+        $article->publication_date = $request->publication_date;
+
+        $article->save();
+        return redirect()->route('articles.index');
+    }
+
+    public function create()
+    {
+        return view("back.pages.articles.create");
+    }
+
+    public function store(Request $request)
+    {
+        $article = new Article;
+        $article->name = $request->name;
+        $article->description = $request->description;
+        $article->author = $request->author;
+        $article->publication_date = $request->publication_date;
+
+        $article->save();
+        return redirect()->route('articles.index');
+    }
 }

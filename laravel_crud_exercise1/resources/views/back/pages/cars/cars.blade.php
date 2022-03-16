@@ -5,6 +5,10 @@
                 <h1 class="text-center">Cars Table</h1>
         </section>
         <section>
+                <form action="{{ route('cars.create') }}" method="get" class="text-center m-2">
+        
+                        <button class="btn btn-success" type="submit">Create</button>
+                </form>
                 <div class="container bg-secondary">
                         <table class="table table-condensed">
                                 <thead>
@@ -19,23 +23,23 @@
                                         <th>Edit</th>
                                         </tr>
                                 </thead>
-                                @foreach ($cars as $item)
+                                @foreach ($cars as $car)
                                 <tbody>
                                         <tr>    
-                                        <td>{{ $item->id }}</td>
-                                        <td>{{ $item->make}}</td>
-                                        <td>{{ $item->year }}</td>
-                                        <td>{{ $item->color}}</td>
-                                        <td>{{ $item->prix}}</td>
-                                        <td>{{ $item->reduction}}%</td>
+                                        <td>{{ $car->id }}</td>
+                                        <td>{{ $car->make}}</td>
+                                        <td>{{ $car->year }}</td>
+                                        <td>{{ $car->color}}</td>
+                                        <td>{{ $car->prix}}</td>
+                                        <td>{{ $car->reduction}}%</td>
                                         <td>
-                                                <form action="{{ route("cars.destroy", $item->id) }}" method="post">
+                                                <form action="{{ route("cars.destroy", $car->id) }}" method="post">
                                                         @csrf
                                                         <button class="btn btn-danger" type="submit">Delete</button>
                                                 </form>
                                         </td>
                                         <td>
-                                                <form action="{{ route("cars.edit", $item->id) }}" method="get">
+                                                <form action="{{ route("cars.edit", $car->id) }}" method="get">
                                                         @csrf
                                                         <button class="btn btn-primary" type="submit">Edit</button>
                                                 </form>

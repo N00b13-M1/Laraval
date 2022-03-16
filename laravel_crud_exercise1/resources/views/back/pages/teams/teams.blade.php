@@ -5,6 +5,10 @@
                 <h1 class="text-center">Teams Table</h1>
         </section>
         <section>
+                <form action="{{ route('teams.create') }}"method="get" class="text-center m-2">
+        
+                        <button class="btn btn-success" type="submit">Create</button>
+                </form>
                 <div class="container bg-secondary">
                 <table class="table table-condensed">
                         <thead>
