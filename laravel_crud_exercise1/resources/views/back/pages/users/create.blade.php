@@ -3,6 +3,22 @@
     @include('back/partials.navbar')
     <div class="container edit">
         <h1 class="text-center">Users Create Page</h1>
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+        @endif
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+        
         <form class="mx-5" action="{{ route('users.store')}}" method="post">
             @csrf
             <div class="mb-3">

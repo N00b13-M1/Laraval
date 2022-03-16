@@ -36,7 +36,7 @@ class UsersController extends Controller
         $user->role = $request->role;
 
         $user->save();
-        return redirect()->route('users.index');
+        return redirect()->route('users.index') ->with('message', 'Element Updated');;
     }
 
     public function create()
@@ -46,6 +46,17 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required',
+            'given_name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'image_path' => 'required',
+            'role' => 'required',
+
+        ]);
+
         $user = new User;
         $user->name = $request->name;
         $user->given_name = $request->given_name;
@@ -55,7 +66,7 @@ class UsersController extends Controller
         $user->role = $request->role;
 
         $user->save();
-        return redirect()->route('users.index');
+        return redirect()->back()->with('message', 'Element Created');;
     }
 
 }
