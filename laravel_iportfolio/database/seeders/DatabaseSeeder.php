@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             SkillsItemSeeder::class,
             PortfolioItemSeeder::class,
             ServicesItemSeeder::class,
+            SkillsItemSeeder::class,
+            TestimonialItemSeeder::class,
             ]
         );
 

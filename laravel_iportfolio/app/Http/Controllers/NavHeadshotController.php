@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Banner_item;
+use App\Models\NavHeadshot;
 use Illuminate\Http\Request;
 
-class BannerItemController extends Controller
+class NavHeadshotController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class BannerItemController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Banner_item  $banner_item
+     * @param  \App\Models\NavHeadshot  $navHeadshot
      * @return \Illuminate\Http\Response
      */
-    public function show(Banner_item $banner_item)
+    public function show(NavHeadshot $navHeadshot)
     {
         //
     }
@@ -52,10 +52,10 @@ class BannerItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Banner_item  $banner_item
+     * @param  \App\Models\NavHeadshot  $navHeadshot
      * @return \Illuminate\Http\Response
      */
-    public function edit(Banner_item $banner_item)
+    public function edit(NavHeadshot $navHeadshot)
     {
         //
     }
@@ -64,10 +64,10 @@ class BannerItemController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Banner_item  $banner_item
+     * @param  \App\Models\NavHeadshot  $navHeadshot
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Banner_item $banner_item)
+    public function update(Request $request, NavHeadshot $navHeadshot)
     {
         //
     }
@@ -75,10 +75,10 @@ class BannerItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Banner_item  $banner_item
+     * @param  \App\Models\NavHeadshot  $navHeadshot
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Banner_item $banner_item)
+    public function destroy(NavHeadshot $navHeadshot)
     {
         //
     }

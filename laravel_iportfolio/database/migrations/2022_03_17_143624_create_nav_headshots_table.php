@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('banner_items', function (Blueprint $table) {
+        Schema::create('nav_headshots', function (Blueprint $table) {
             $table->id();
+            $table->string("photo");
+            $table->string("title");
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('banner_items');
+        Schema::dropIfExists('nav_headshots');
     }
 };

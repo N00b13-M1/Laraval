@@ -17,28 +17,28 @@ class FactsItemSeeder extends Seeder
     {
         DB::table("facts_items")->insert([
             "icon"=> "bi bi-emoji-smile",
-            "number" => "232",
+            "number" => 232,
             "strong" => "Happy Clients",
             "p" => " consequuntur quae",
             "created_at"=>now()
         ]);
         DB::table("facts_items")->insert([
             "icon"=> "bi bi-journal-richtext",
-            "number" => "521",
+            "number" => 521,
             "strong" => "Projects",
             "p" => " adipisci atque cum quia aut",
             "created_at"=>now()
         ]);
         DB::table("facts_items")->insert([
             "icon"=> "bi bi-journal-richtext",
-            "number" => "1453",
+            "number" => 1453,
             "strong" => "Hours Of Support",
             "p" => " aut commodi quaerat",
             "created_at"=>now()
         ]);
         DB::table("facts_items")->insert([
             "icon"=> "bi bi-people",
-            "number" => "32",
+            "number" => 32,
             "strong" => "Hard Works",
             "p" => " rerum asperiores dolor",
             "created_at"=>now()

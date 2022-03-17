@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class BannerItemSeeder extends Seeder
+class NavHeadshotSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +15,10 @@ class BannerItemSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table("facts_items")->insert([
+            "photo"=> "img/profile-img.jpg",
+            "title" => "Alex Smith",
+            "created_at"=>now()
+        ]);
     }
 }
