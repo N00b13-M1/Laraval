@@ -32,5 +32,6 @@ class ContactItemSeeder extends Seeder
             "title"=> "Call:",
             "description" => "+1 558 955 4885",
             "created_at"=>now()
+        ]);
     }
 }

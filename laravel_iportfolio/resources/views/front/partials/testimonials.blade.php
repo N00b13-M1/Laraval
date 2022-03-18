@@ -2,17 +2,30 @@
 <section id="testimonials" class="testimonials section-bg">
     <div class="container">
         <div class="section-title">
-            <h2>Testimonials</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-                sit in iste officiis commodi quidem hic quas.</p>
+            <h2>{{ $titles[8]->main_title }}</h2>
+            <p>{{ $titles[8]->sub_title }}</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
-
+                @for ($i = 0; $i < count($testimonial_items); $i++)
                 <div class="swiper-slide">
-                    <div class="testimonial-item" data-aos="fade-up">
+                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="{{ $testimonial_items[$i]->delay}}">
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            {{ $testimonial_items[$i]->quote}}
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                        <img src="{{ $testimonial_items[$i]->picture}}" class="testimonial-img" alt="">
+                        <h3>{{ $testimonial_items[$i]->h3}}</h3>
+                        <h4>{{ $testimonial_items[$i]->h4}}</h4>
+                    </div>
+                </div><!-- End testimonial item -->
+                @endfor
+                
+                
+                {{-- <div class="swiper-slide">
+                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="0">
                         <p>
                             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                             Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
@@ -82,7 +95,7 @@
                         <h3>John Larson</h3>
                         <h4>Entrepreneur</h4>
                     </div>
-                </div><!-- End testimonial item -->
+                </div><!-- End testimonial item --> --}}
 
             </div>
             <div class="swiper-pagination"></div>

@@ -2,10 +2,8 @@
 <section id="skills" class="skills section-bg">
     <div class="container">
         <div class="section-title">
-            <h2>Skills</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-                sit in iste officiis commodi quidem hic quas.</p>
+            <h2>{{ $titles[4]->main_title }}</h2>
+            <p>{{ $titles[4]->sub_title }}</p>
         </div>
 
         <div class="row skills-content">

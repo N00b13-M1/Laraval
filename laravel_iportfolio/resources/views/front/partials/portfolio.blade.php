@@ -2,10 +2,8 @@
 <section id="portfolio" class="portfolio section-bg">
     <div class="container">
         <div class="section-title">
-            <h2>Portfolio</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-                sit in iste officiis commodi quidem hic quas.</p>
+            <h2>{{ $titles[6]->main_title }}</h2>
+            <p>{{ $titles[6]->sub_title }}</p>
         </div>
 
         <div class="row" data-aos="fade-up">
@@ -21,7 +19,20 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            @for ($i = 0; $i < count($portfolio_items); $i++)
+                <div class="col-lg-4 col-md-6 portfolio-item {{$portfolio_items[$i]->filter }}">
+                    <div class="portfolio-wrap">
+                        <img src="{{ $portfolio_items[$i]->source }}" class="img-fluid" alt="">
+                        <div class="portfolio-links">
+                            <a href="{{ $portfolio_items[$i]->href1 }}" data-gallery="portfolioGallery"
+                                class="portfolio-lightbox" title="{{ $portfolio_items[$i]->title1 }}"><i class="bx bx-plus"></i></a>
+                            <a href="{{ $portfolio_items[$i]->href2 }}" title="{{ $portfolio_items[$i]->title2 }}"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            @endfor
+
+            {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
                     <img src="img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                     <div class="portfolio-links">
@@ -118,7 +129,7 @@
                         <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 

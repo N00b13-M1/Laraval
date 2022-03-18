@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About_item;
 use Illuminate\Http\Request;
 
+
 class AboutItemController extends Controller
 {
     /**
@@ -15,8 +16,9 @@ class AboutItemController extends Controller
     public function index()
     {
         $about_items = About_item::all();
-            return view("back.", compact("about_items"));
+            return view("front/home", compact("about_items"));
     }
+
 
     /**
      * Show the form for creating a new resource.

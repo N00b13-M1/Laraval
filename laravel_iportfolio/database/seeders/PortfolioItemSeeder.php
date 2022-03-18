@@ -16,6 +16,7 @@ class PortfolioItemSeeder extends Seeder
     public function run()
     {
         DB::table("portfolio_items")->insert([
+            "filter" => "filter-app",
             "source"=> "img/portfolio/portfolio-1.jpg",
             "href1" => "img/portfolio/portfolio-1.jpg",
             "title1" => "App 1",
@@ -24,6 +25,7 @@ class PortfolioItemSeeder extends Seeder
             "created_at"=>now()
         ]);
         DB::table("portfolio_items")->insert([
+            "filter" => "filter-web",
             "source"=> "img/portfolio/portfolio-2.jpg",
             "href1" => "img/portfolio/portfolio-2.jpg",
             "title1" => "Web 3",
@@ -32,6 +34,7 @@ class PortfolioItemSeeder extends Seeder
             "created_at"=>now()
         ]);
         DB::table("portfolio_items")->insert([
+            "filter" => "filter-app",
             "source"=> "img/portfolio/portfolio-3.jpg",
             "href1" => "img/portfolio/portfolio-3.jpg",
             "title1" => "App 2",
@@ -40,6 +43,7 @@ class PortfolioItemSeeder extends Seeder
             "created_at"=>now()
         ]);
         DB::table("portfolio_items")->insert([
+            "filter" => "filter-card",
             "source"=> "img/portfolio/portfolio-4.jpg",
             "href1" => "img/portfolio/portfolio-4.jpg",
             "title1" => "Card 2",
@@ -48,6 +52,7 @@ class PortfolioItemSeeder extends Seeder
             "created_at"=>now()
         ]);
         DB::table("portfolio_items")->insert([
+            "filter" => "filter-web",
             "source"=> "img/portfolio/portfolio-5.jpg",
             "href1" => "img/portfolio/portfolio-5.jpg",
             "title1" => "Web 2",
@@ -56,6 +61,7 @@ class PortfolioItemSeeder extends Seeder
             "created_at"=>now()
         ]);
         DB::table("portfolio_items")->insert([
+            "filter" => "filter-app",
             "source"=> "img/portfolio/portfolio-6.jpg",
             "href1" => "img/portfolio/portfolio-6.jpg",
             "title1" => "App 3",
@@ -64,6 +70,7 @@ class PortfolioItemSeeder extends Seeder
             "created_at"=>now()
         ]);
         DB::table("portfolio_items")->insert([
+            "filter" => "filter-app",
             "source"=> "img/portfolio/portfolio-7.jpg",
             "href1" => "img/portfolio/portfolio-7.jpg",
             "title1" => "Card 1",
@@ -72,6 +79,7 @@ class PortfolioItemSeeder extends Seeder
             "created_at"=>now()
         ]);
         DB::table("portfolio_items")->insert([
+            "filter" => "filter-card",
             "source"=> "img/portfolio/portfolio-8.jpg",
             "href1" => "img/portfolio/portfolio-8.jpg",
             "title1" => "Card 3",
@@ -80,6 +88,7 @@ class PortfolioItemSeeder extends Seeder
             "created_at"=>now()
         ]);
         DB::table("portfolio_items")->insert([
+            "filter" => "filter-web",
             "source"=> "img/portfolio/portfolio-9.jpg",
             "href1" => "img/portfolio/portfolio-9.jpg",
             "title1" => "Web 3",

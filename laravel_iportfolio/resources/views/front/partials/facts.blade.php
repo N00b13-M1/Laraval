@@ -1,15 +1,21 @@
 <section id="facts" class="facts">
     <div class="container">
         <div class="section-title">
-            <h2>Facts</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-                sit in iste officiis commodi quidem hic quas.</p>
+            <h2>{{ $titles[3]->main_title }}</h2>
+            <p>{{ $titles[3]->sub_title }}</p>
         </div>
-
         <div class="row no-gutters">
-
+            @for ($i = 0; $i < count($facts_items); $i++)
             <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+                <div class="count-box">
+                    <i class="{{ $facts_items[$i]->icon }}"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="{{ $facts_items[$i]->number }}" data-purecounter-duration="1"
+                        class="purecounter"></span>
+                    <p><strong>{{ $facts_items[$i]->strong }}</strong>{{ $facts_items[$i]->p }}</p>
+                </div>
+            </div>
+            @endfor
+            {{-- <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
                 <div class="count-box">
                     <i class="bi bi-emoji-smile"></i>
                     <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
@@ -43,7 +49,7 @@
                         class="purecounter"></span>
                     <p><strong>Hard Workers</strong> rerum asperiores dolor</p>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 

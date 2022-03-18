@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Contact_item;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
             NavHeadshotSeeder::class,
             NavLinkSeeder::class,
             NavSocialSeeder::class,
+            ContactItemSeeder::class,
             ]
         );
 

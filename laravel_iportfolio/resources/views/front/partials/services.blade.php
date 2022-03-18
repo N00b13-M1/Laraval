@@ -2,20 +2,19 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-title">
-                <h2>Services</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>{{ $titles[7]->main_title }}</h2>
+                <p>{{ $titles[7]->sub_title }}</p>
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-                    <div class="icon"><i class="bi bi-briefcase"></i></div>
-                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
-                        sint occaecati cupiditate non provident</p>
-                </div>
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                @for ($i = 0; $i < count($services_items); $i++)
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="{{ $services_items[$i]->delay}}">
+                        <div class="icon"><i class="{{ $services_items[$i]->logo}}"></i></div>
+                        <h4 class="title"><a href="">{{ $services_items[$i]->title}}</a></h4>
+                        <p class="description">{{ $services_items[$i]->description}}</p>
+                    </div>
+                @endfor
+                {{-- <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon"><i class="bi bi-card-checklist"></i></div>
                     <h4 class="title"><a href="">Dolor Sitema</a></h4>
                     <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
@@ -44,7 +43,7 @@
                     <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
                     <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
                         tempore, cum soluta nobis est eligendi</p>
-                </div>
+                </div> --}}
             </div>
 
         </div>

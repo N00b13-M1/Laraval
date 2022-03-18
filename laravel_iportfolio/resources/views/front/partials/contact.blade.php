@@ -2,10 +2,8 @@
 <section id="contact" class="contact">
     <div class="container">
         <div class="section-title">
-            <h2>Contact</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <h2>{{ $titles[9]->main_title }}</h2>
+            <p>{{ $titles[9]->sub_title }}</p>
         </div>
 
         <div class="row" data-aos="fade-in">
@@ -13,21 +11,21 @@
             <div class="col-lg-5 d-flex align-items-stretch">
                 <div class="info">
                     <div class="address">
-                        <i class="bi bi-geo-alt"></i>
-                        <h4>Location:</h4>
-                        <p>A108 Adam Street, New York, NY 535022</p>
+                        <i class="{{ $contact_items[0]->icon }}"></i>
+                        <h4>{{ $contact_items[0]->title }}</h4>
+                        <p>{{ $contact_items[0]->description }}</p>
                     </div>
 
                     <div class="email">
-                        <i class="bi bi-envelope"></i>
-                        <h4>Email:</h4>
-                        <p>info@example.com</p>
+                        <i class="{{ $contact_items[1]->icon }}"></i>
+                        <h4>{{ $contact_items[1]->title }}</h4>
+                        <p>{{ $contact_items[1]->description }}</p>
                     </div>
 
                     <div class="phone">
-                        <i class="bi bi-phone"></i>
-                        <h4>Call:</h4>
-                        <p>+1 5589 55488 55s</p>
+                        <i class="{{ $contact_items[2]->icon }}"></i>
+                        <h4>{{ $contact_items[2]->title }}</h4>
+                        <p>{{ $contact_items[2]->description }}</p>
                     </div>
 
                     <iframe

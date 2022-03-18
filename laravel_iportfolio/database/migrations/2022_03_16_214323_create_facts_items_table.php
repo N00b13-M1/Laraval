@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('facts_items', function (Blueprint $table) {
             $table->id();
+            
             $table->string("icon");
             $table->integer("number");
             $table->string("strong");
