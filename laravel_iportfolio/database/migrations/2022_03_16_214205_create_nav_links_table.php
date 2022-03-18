@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('nav_links', function (Blueprint $table) {
             $table->id();
+            $table->string("href");
+            $table->string("logo");
+            $table->string("span");
             $table->timestamps();
         });
     }

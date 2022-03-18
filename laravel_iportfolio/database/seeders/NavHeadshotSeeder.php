@@ -15,7 +15,7 @@ class NavHeadshotSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("facts_items")->insert([
+        DB::table("nav_headshots")->insert([
             "photo"=> "img/profile-img.jpg",
             "title" => "Alex Smith",
             "created_at"=>now()

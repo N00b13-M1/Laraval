@@ -14,7 +14,8 @@ class AboutItemController extends Controller
      */
     public function index()
     {
-        //
+        $about_items = About_item::all();
+            return view("back.", compact("about_items"));
     }
 
     /**

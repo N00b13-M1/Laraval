@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('nav_socials', function (Blueprint $table) {
             $table->id();
+            $table->string("href");
+            $table->string("icon");
             $table->timestamps();
         });
     }

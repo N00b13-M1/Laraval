@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
             ServicesItemSeeder::class,
             SkillsItemSeeder::class,
             TestimonialItemSeeder::class,
+            NavHeadshotSeeder::class,
+            NavLinkSeeder::class,
+            NavSocialSeeder::class,
             ]
         );
 

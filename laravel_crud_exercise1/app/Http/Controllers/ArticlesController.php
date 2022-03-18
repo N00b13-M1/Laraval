@@ -56,3 +56,4 @@ class ArticlesController extends Controller
         return redirect()->route('articles.index');
     }
 }
+
