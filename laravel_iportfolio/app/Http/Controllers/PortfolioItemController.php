@@ -14,7 +14,8 @@ class PortfolioItemController extends Controller
      */
     public function index()
     {
-        //
+        $portfolio_items = Portfolio_item::all();
+        return view("back.pages.portfolio", compact("portfolio_items"));
     }
 
     /**

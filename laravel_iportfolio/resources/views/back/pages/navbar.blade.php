@@ -4,9 +4,8 @@
     @include('back/partials/header')
     <main id="main">
         <div class="back d-flex">
-            <h1 class="text-center m-auto">Welcome to the Back-end</h1>
+            <h1 class="text-center m-auto">Navbar Table</h1>
         </div>
     </main>
     @include('back/partials/footer')
 @endsection
-

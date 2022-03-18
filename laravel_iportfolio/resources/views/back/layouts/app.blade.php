@@ -37,8 +37,10 @@
   ======================================================== -->
 </head>
 
-<body class"back">
-    @yield('content')
+<body class="back">
+    <div class="mx-auto">
+        @yield('content')
+    </div>
     
     <!-- Vendor JS Files -->
     <script src="vendor/purecounter/purecounter.js"></script>

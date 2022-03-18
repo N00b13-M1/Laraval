@@ -16,17 +16,32 @@
         <nav id="navbar" class="nav-menu navbar">
             <ul>
                 <li><a href="{{ route('home') }}" class="nav-link scrollto active"><i class="bx bx-home"></i>
-                        <span>Home</span></a></li>
-                <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a>
-                </li>
-                <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i>
-                        <span>Resume</span></a></li>
-                <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
-                        <span>Portfolio</span></a></li>
-                <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i>
-                        <span>Services</span></a></li>
-                <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i>
-                        <span>Contact</span></a></li>
+                <span>Home</span></a></li>
+
+                <li><a href="{{ route('navbar.index') }}" class="nav-link scrollto"><i class='bx bx-navigation'></i><span>Navbar</span></a></li>
+
+                <li><a href="{{ route('titles.index') }}" class="nav-link scrollto"><i class='bx bx-captions'></i><span>Titles</span></a></li>
+
+                <li><a href="{{ route('about.index') }}" class="nav-link scrollto"><i class='bx bx-terminal'></i><span>About</span></a></li>
+            
+                <li><a href="{{ route('facts.index') }}" class="nav-link scrollto"><i class='bx bxs-factory'></i>
+                <span>Facts</span></a></li>
+
+                <li><a href="{{ route('skills.index') }}" class="nav-link scrollto"><i class='bx bxs-checkbox-minus' ></i>
+                <span>Skills</span></a></li>
+
+                <li><a href="{{ route('portfolio.index') }}" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+                <span>Portfolio</span></a></li>
+
+                <li><a href="{{ route('services.index') }}" class="nav-link scrollto"><i class="bx bx-server"></i>
+                <span>Services</span></a></li>
+
+                <li><a href="{{ route('testimonials.index') }}" class="nav-link scrollto"><i class='bx bxs-quote-left'></i>
+                <span>Testimonials</span></a></li>
+
+                <li><a href="{{ route('contact.index') }}" class="nav-link scrollto"><i class="bx bx-envelope"></i>
+                <span>Contact</span></a></li>
+
             </ul>
         </nav><!-- .nav-menu -->
     </div>

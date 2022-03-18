@@ -15,7 +15,7 @@ class ContactItemController extends Controller
     public function index()
     {
         $contact_items = Contact_item::all();
-        return view("front/home", compact("contact_items"));
+        return view("back.pages.contact", compact("contact_items"));
     }
 
     /**

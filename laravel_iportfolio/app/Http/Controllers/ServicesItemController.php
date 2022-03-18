@@ -14,7 +14,8 @@ class ServicesItemController extends Controller
      */
     public function index()
     {
-        //
+        $services_items = Services_item::all();
+        return view("back.pages.services", compact("services_items"));
     }
 
     /**

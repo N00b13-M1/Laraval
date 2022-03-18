@@ -14,7 +14,8 @@ class FactsItemController extends Controller
      */
     public function index()
     {
-        //
+        $fact_items = Facts_item::all();
+        return view("back.pages.facts", compact("fact_items"));
     }
 
     /**

@@ -14,7 +14,8 @@ class SkillsItemController extends Controller
      */
     public function index()
     {
-        //
+        $skills_items = Skills_item::all();
+        return view("back.pages.skills", compact("skills_items"));
     }
 
     /**

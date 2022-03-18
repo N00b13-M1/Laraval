@@ -14,9 +14,9 @@ class TitleController extends Controller
      */
     public function index()
     {
-        //
+    $titles = Title::all();
+    return view("back.pages.titles", compact("titles"));
     }
-
     /**
      * Show the form for creating a new resource.
      *
