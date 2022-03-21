@@ -15,7 +15,7 @@ class NavLinkController extends Controller
     public function index()
     {
         $nav_links = Nav_link::all();
-        return view("back.pages.navbar", compact("nav_links"));
+        return view("back.pages.navbar.navbar", compact("nav_links"));
     }
 
     /**

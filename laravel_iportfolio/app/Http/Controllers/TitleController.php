@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact_item;
 use App\Models\Title;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class TitleController extends Controller
     public function index()
     {
     $titles = Title::all();
-    return view("back.pages.titles", compact("titles"));
+    return view("back.pages.titles.titles", compact("titles"));
     }
     /**
      * Show the form for creating a new resource.
@@ -55,9 +56,10 @@ class TitleController extends Controller
      * @param  \App\Models\Title  $title
      * @return \Illuminate\Http\Response
      */
-    public function edit(Title $title)
+    public function edit($id)
     {
-        //
+        $contact_item = Contact_item::find($id);
+        return view("back.pages.contact.edit", compact('contact_item'))
     }
 
     /**
@@ -67,9 +69,14 @@ class TitleController extends Controller
      * @param  \App\Models\Title  $title
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Title $title)
+    public function update($id, Request $request)
     {
-        //
+        $contact_item = Contact_item::find($id);
+        $contact_item->strong = $request->strong;
+        $contact_item->span = $request->span;
+
+        $contact_item->save();
+        return redirect()->route('about.index');
     }
 
     /**

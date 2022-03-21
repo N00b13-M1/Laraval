@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Skills_item extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'language',
+        'percentage',
+        'value'
+    ];
+
+    protected $table = 'nav_headshots';
 }

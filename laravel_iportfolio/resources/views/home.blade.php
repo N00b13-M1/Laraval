@@ -7,7 +7,7 @@
         @include('front/partials/about')
         @include('front/partials/facts')
         @include('front/partials/skills')
-        {{-- @include('front/partials/resume') --}}
+        @include('front/partials/resume')
         @include('front/partials/portfolio')
         @include('front/partials/services')
         @include('front/partials/testimonials')

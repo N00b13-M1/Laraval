@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class NavHeadshot extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'photo',
+        'title'
+    ];
+
+    protected $table = 'nav_headshots';
 }

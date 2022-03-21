@@ -11,8 +11,10 @@
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
 
-
+            <a href="{{ route('home') }}" class="nav-link scrollto"><i class='bx bx-log-out'></i>
+                <span>Logout</span></a>
                         
         </div>
     </div>
-</footer><!-- End  Footer -->
+</footer>
+<!-- End  Footer -->

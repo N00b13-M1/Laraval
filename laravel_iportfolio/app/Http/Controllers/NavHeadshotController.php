@@ -15,7 +15,7 @@ class NavHeadshotController extends Controller
     public function index()
     {
         $navheadshot = NavHeadshot::first();
-        return view("back.pages.navbar", compact("navheadshot"));
+        return view("back.pages.navbar.navbar", compact("navheadshot"));
     }
 
     /**

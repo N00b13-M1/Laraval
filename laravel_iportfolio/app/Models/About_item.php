@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class About_item extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'strong',
+        'span',
+    ];
+
+    protected $table = 'about_items';
 }

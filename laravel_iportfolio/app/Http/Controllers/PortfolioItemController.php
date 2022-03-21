@@ -15,8 +15,9 @@ class PortfolioItemController extends Controller
     public function index()
     {
         $portfolio_items = Portfolio_item::all();
-        return view("back.pages.portfolio", compact("portfolio_items"));
+        return view("back.pages.portfolio.portfolio", compact("portfolio_items"));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +26,7 @@ class PortfolioItemController extends Controller
      */
     public function create()
     {
-        //
+        //4334r34r4334r3
     }
 
     /**

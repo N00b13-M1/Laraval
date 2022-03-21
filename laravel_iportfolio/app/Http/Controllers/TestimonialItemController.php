@@ -15,7 +15,7 @@ class TestimonialItemController extends Controller
     public function index()
     {
         $testimonial_items = Testimonial_item::all();
-        return view("back.pages.testimonials", compact("testimonial_items"));
+        return view("back.pages.testimonials.testimonials", compact("testimonial_items"));
     }
 
     /**

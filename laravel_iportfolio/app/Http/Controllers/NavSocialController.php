@@ -15,7 +15,7 @@ class NavSocialController extends Controller
     public function index()
     {
         $nav_socials = Nav_social::all();
-        return view("back.pages.navbar", compact("nav_socials"));
+        return view("back.pages.navbar.navbar", compact("nav_socials"));
     }
 
     /**

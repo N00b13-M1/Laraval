@@ -16,7 +16,7 @@ class AboutItemController extends Controller
     public function index()
     {
         $about_items = About_item::all();
-            return view("back.pages.about", compact("about_items"));
+            return view("back.pages.about.about", compact("about_items"));
     }
 
 
@@ -58,9 +58,10 @@ class AboutItemController extends Controller
      * @param  \App\Models\About_item  $about_item
      * @return \Illuminate\Http\Response
      */
-    public function edit(About_item $about_item)
+    public function edit($id)
     {
-        //
+        $about_item = About_item::find($id);
+        return view("back.pages.about.edit", compact('about_item'));
     }
 
     /**
@@ -70,9 +71,16 @@ class AboutItemController extends Controller
      * @param  \App\Models\About_item  $about_item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About_item $about_item)
+
+    public function update($id, Request $request)
     {
-        //
+        $about_item = About_item::find($id);
+        $about_item->strong = $request->strong;
+        $about_item->span = $request->span;
+
+        $about_item->save();
+        return redirect()->route('about.index');
+
     }
 
     /**
@@ -81,7 +89,7 @@ class AboutItemController extends Controller
      * @param  \App\Models\About_item  $about_item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(About_item $about_item)
+    public function destroy()
     {
         //
     }

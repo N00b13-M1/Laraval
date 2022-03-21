@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Facts_item extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'icon',
+        'number',
+        'strong',
+        'p'
+    ];
+
+    protected $table = 'facts_items';
 }

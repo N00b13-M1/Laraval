@@ -14,8 +14,8 @@ class FactsItemController extends Controller
      */
     public function index()
     {
-        $fact_items = Facts_item::all();
-        return view("back.pages.facts", compact("fact_items"));
+        $facts_items = Facts_item::all();
+        return view("back.pages.facts.facts", compact("facts_items"));
     }
 
     /**
@@ -56,9 +56,10 @@ class FactsItemController extends Controller
      * @param  \App\Models\Facts_item  $facts_item
      * @return \Illuminate\Http\Response
      */
-    public function edit(Facts_item $facts_item)
+    public function edit($id)
     {
-        //
+        $facts_item = Facts_item::find($id);
+        return view("back.pages.facts.edit", compact('facts_item'));
     }
 
     /**
@@ -68,9 +69,16 @@ class FactsItemController extends Controller
      * @param  \App\Models\Facts_item  $facts_item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Facts_item $facts_item)
+    public function update($id, Request $request)
     {
-        //
+        $facts_item = Facts_item::find($id);
+        $facts_item->icon = $request->icon;
+        $facts_item->number = $request->number;
+        $facts_item->strong = $request->strong;
+        $facts_item->p = $request->p;
+
+        $facts_item->save();
+        return redirect()->route('facts.index');
     }
 
     /**
