@@ -5,7 +5,7 @@
     <main id="main">
         <div class="back">
             <h1 class="text-center mx-auto">Edit About</h1>
-            {{-- @if (session()->has('message'))
+            @if (session()->has('message'))
                 <div class="alert alert-success">
                     {{ session()->get('message') }}
                 </div>
@@ -19,7 +19,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif --}}
+            @endif
             <form class="mx-5" action="{{route("about.update", $about_item->id)}}" method="post">
                 @csrf
                 <div class="mb-3">

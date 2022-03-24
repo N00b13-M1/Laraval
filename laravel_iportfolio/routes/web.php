@@ -52,7 +52,7 @@ Route::post("back/facts/{id}/delete", [FactsItemController::class,"destroy"])->n
 Route::get("back/facts/{id}/edit", [FactsItemController::class, "edit"])->name("facts.edit");
 Route::post("back/facts/{id}/update", [FactsItemController::class, "update"])->name('facts.update');
 Route::get("back/facts/create", [FactsItemController::class, "create"])->name("facts.create");
-// Route::post("back/facts/store", [FactsItemController::class, "store"])->name("facts.store");
+Route::post("back/facts/store", [FactsItemController::class, "store"])->name("facts.store");
 
 //Navbar
 Route::get("back/navbar", [NavHeadshotController::class,"index"])->name("navbar.index");
@@ -73,10 +73,11 @@ Route::post("back/services/{id}/delete", [ServicesItemController::class, "destro
 
 //Skills
 Route::get("back/skills", [SkillsItemController::class, "index"])->name("skills.index");
-Route::post("back/skills/{id}/delete", [SkillsItemController::class, "destroy"])->name('skilss.destroy');
-Route::get("back/skills/{id}/edit", [PortfolioSkillsItemControllerItemController::class, "edit"])->name('skills.edit');
-Route::post("back/skills/{id}/update", [SkillsItemController::class, "update"])->name('skilss.update');
+Route::post("back/skills/{id}/delete", [SkillsItemController::class, "destroy"])->name('skills.destroy');
+Route::get("back/skills/{id}/edit", [SkillsItemController::class, "edit"])->name('skills.edit');
+Route::post("back/skills/{id}/update", [SkillsItemController::class, "update"])->name('skills.update');
 Route::get("back/skills/create", [SkillsItemController::class, 'create'])->name('skills.create');
+Route::post("back/skills/store", [SkillsItemController::class, 'store'])->name('skills.store');
 
 
 //Testimonials

@@ -25,7 +25,7 @@ class TestimonialItemController extends Controller
      */
     public function create()
     {
-        //
+        return view("back.pages.testimonials.create");
     }
 
     /**
@@ -36,9 +36,16 @@ class TestimonialItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $testimonial_item = new Testimonial_item();
+        $testimonial_item->delay = $request->delay;
+        $testimonial_item->quote = $request->quote;
+        $testimonial_item->picture = $request->picture;
+        $testimonial_item->h4 = $request->h4;
+        $testimonial_item->h3 = $request->h3;
 
+        $testimonial_item->save();
+        return redirect()->route('testimonials.index');
+    }
     /**
      * Display the specified resource.
      *
@@ -56,9 +63,10 @@ class TestimonialItemController extends Controller
      * @param  \App\Models\Testimonial_item  $testimonial_item
      * @return \Illuminate\Http\Response
      */
-    public function edit(Testimonial_item $testimonial_item)
+    public function edit($id)
     {
-        //
+        $testimonial_item = Testimonial_item::find($id);
+        return view("back.pages.testimonials.edit", compact ('testimonial_item'));
     }
 
     /**
@@ -68,9 +76,17 @@ class TestimonialItemController extends Controller
      * @param  \App\Models\Testimonial_item  $testimonial_item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Testimonial_item $testimonial_item)
+    public function update($id, Request $request)
     {
-        //
+        $testimonial_item = Testimonial_item::find('$id');
+        $testimonial_item->delay = $request->delay;
+        $testimonial_item->quote = $request->quote;
+        $testimonial_item->picture = $request->picture;
+        $testimonial_item->h4 = $request->h4;
+        $testimonial_item->h3 = $request->h3;
+
+        $testimonial_item->save();
+        return redirect()->route('testimonials.index');
     }
 
     /**
@@ -79,8 +95,11 @@ class TestimonialItemController extends Controller
      * @param  \App\Models\Testimonial_item  $testimonial_item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Testimonial_item $testimonial_item)
+    public function destroy($id)
     {
-        //
+        $testimonial_item = Testimonial_item::find($id);
+        $testimonial_item->delete();
+        return redirect()->back();
     }
 }
+

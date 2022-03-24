@@ -25,7 +25,7 @@ class FactsItemController extends Controller
      */
     public function create()
     {
-        //
+        return view("back.pages.facts.create");
     }
 
     /**
@@ -36,7 +36,14 @@ class FactsItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $facts_item = new Facts_item();
+        $facts_item->icon = $request->icon;
+        $facts_item->number = $request->number;
+        $facts_item->strong = $request->strong;
+        $facts_item->p = $request->p;
+
+        $facts_item->save();
+        return redirect()->route('facts.index');
     }
 
     /**
@@ -87,8 +94,11 @@ class FactsItemController extends Controller
      * @param  \App\Models\Facts_item  $facts_item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Facts_item $facts_item)
+    public function destroy($id)
     {
-        //
+        $facts_item = Facts_item::find($id);
+        $facts_item->delete();
+        return redirect()->back();
     }
 }
+

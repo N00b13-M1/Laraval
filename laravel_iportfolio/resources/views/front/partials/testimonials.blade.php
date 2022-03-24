@@ -10,7 +10,7 @@
             <div class="swiper-wrapper">
                 @for ($i = 0; $i < count($testimonial_items); $i++)
                 <div class="swiper-slide">
-                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="{{ $testimonial_items[$i]->delay}}">
+                    <div class="testimonial-item" data-aos="fade-up" data-aos-delay="{{ $i }}00">
                         <p>
                             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                             {{ $testimonial_items[$i]->quote}}

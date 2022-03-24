@@ -25,7 +25,7 @@ class TitleController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -58,8 +58,8 @@ class TitleController extends Controller
      */
     public function edit($id)
     {
-        $contact_item = Contact_item::find($id);
-        return view("back.pages.contact.edit", compact('contact_item'))
+        $title = Title::find($id);
+        return view("back.pages.titles.edit", compact('title'));
     }
 
     /**
@@ -71,12 +71,13 @@ class TitleController extends Controller
      */
     public function update($id, Request $request)
     {
-        $contact_item = Contact_item::find($id);
-        $contact_item->strong = $request->strong;
-        $contact_item->span = $request->span;
+        $title = Title::find($id);
+        $title->main_title = $request->main_title;
+        $title->sub_title = $request->sub_title;
+        $title->sub_title2 = $request->sub_title2;
 
-        $contact_item->save();
-        return redirect()->route('about.index');
+        $title->save();
+        return redirect()->route('titles.index');
     }
 
     /**
@@ -85,7 +86,7 @@ class TitleController extends Controller
      * @param  \App\Models\Title  $title
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Title $title)
+    public function destroy($id)
     {
         //
     }

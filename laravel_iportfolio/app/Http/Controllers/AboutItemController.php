@@ -16,6 +16,7 @@ class AboutItemController extends Controller
     public function index()
     {
         $about_items = About_item::all();
+            // dd($about_items[0]->strong);
             return view("back.pages.about.about", compact("about_items"));
     }
 
@@ -94,3 +95,5 @@ class AboutItemController extends Controller
         //
     }
 }
+
+rfrferfeferferferfeerferfsdsdffsdfsdfdfdfbbdfvfddfvdfvdfvwrfwrwfww

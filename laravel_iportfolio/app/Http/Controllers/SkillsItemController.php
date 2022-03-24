@@ -25,7 +25,7 @@ class SkillsItemController extends Controller
      */
     public function create()
     {
-        //
+        return view("back.pages.skills.create");
     }
 
     /**
@@ -36,7 +36,13 @@ class SkillsItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $skills_item = new Skills_item();
+        $skills_item->language = $request->language;
+        $skills_item->percentage = $request->percentage;
+        $skills_item->value = $request->value;
+
+        $skills_item->save();
+        return redirect()->route('skills.index');
     }
 
     /**
@@ -56,9 +62,10 @@ class SkillsItemController extends Controller
      * @param  \App\Models\Skills_item  $skills_item
      * @return \Illuminate\Http\Response
      */
-    public function edit(Skills_item $skills_item)
+    public function edit($id)
     {
-        //
+        $skills_item = Skills_item::find($id);
+        return view("back.pages.skills.edit", compact ('skills_item'));
     }
 
     /**
@@ -68,9 +75,15 @@ class SkillsItemController extends Controller
      * @param  \App\Models\Skills_item  $skills_item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Skills_item $skills_item)
+    public function update($id, Request $request)
     {
-        //
+        $skills_item = Skills_item::find($id);
+        $skills_item->language = $request->language;
+        $skills_item->percentage = $request->percentage;
+        $skills_item->value = $request->value;
+
+        $skills_item->save();
+        return redirect()->route('skills.index');
     }
 
     /**
@@ -79,8 +92,10 @@ class SkillsItemController extends Controller
      * @param  \App\Models\Skills_item  $skills_item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Skills_item $skills_item)
+    public function destroy($id)
     {
-        //
+        $skills_item = Skills_item::find($id);
+        $skills_item->delete();
+        return redirect()->back();
     }
 }

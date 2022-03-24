@@ -26,7 +26,7 @@ class PortfolioItemController extends Controller
      */
     public function create()
     {
-        //4334r34r4334r3
+        return view("back.pages.portfolio.create");
     }
 
     /**
@@ -37,7 +37,16 @@ class PortfolioItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $portfolio_item = new Portfolio_item();
+        $portfolio_item->filter = $request->filter;
+        $portfolio_item->source = $request->source;
+        $portfolio_item->href1 = $request->href1;
+        $portfolio_item->title1 = $request->title1;
+        $portfolio_item->href2 = $request->href2;
+        $portfolio_item->title2 = $request->title2;
+
+        $portfolio_item->save();
+        return redirect()->route('portfolio.index');
     }
 
     /**
@@ -57,9 +66,10 @@ class PortfolioItemController extends Controller
      * @param  \App\Models\Portfolio_item  $portfolio_item
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portfolio_item $portfolio_item)
+    public function edit($id)
     {
-        //
+        $portfolio_item = Portfolio_item::find($id);
+        return view("back.pages.portfolio.edit", compact('portfolio_item'));
     }
 
     /**
@@ -69,9 +79,18 @@ class PortfolioItemController extends Controller
      * @param  \App\Models\Portfolio_item  $portfolio_item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portfolio_item $portfolio_item)
+    public function update($id, Request $request)
     {
-        //
+        $portfolio_item = Portfolio_item::find($id);
+        $portfolio_item->filter = $request->filter;
+        $portfolio_item->source = $request->source;
+        $portfolio_item->href1 = $request->href1;
+        $portfolio_item->title1 = $request->title1;
+        $portfolio_item->href2 = $request->href2;
+        $portfolio_item->title2 = $request->title2;
+
+        $portfolio_item->save();
+        return redirect()->route('portfolio.index');
     }
 
     /**
@@ -80,8 +99,11 @@ class PortfolioItemController extends Controller
      * @param  \App\Models\Portfolio_item  $portfolio_item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Portfolio_item $portfolio_item)
+    public function destroy($id)
     {
-        //
+        $portfolio_item = Portfolio_item::find($id);
+        $portfolio_item->delete();
+        return redirect()->back();
     }
 }
+

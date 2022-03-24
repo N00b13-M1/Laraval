@@ -15,5 +15,5 @@ class Skills_item extends Model
         'value'
     ];
 
-    protected $table = 'nav_headshots';
+    protected $table = 'skills_items';
 }
