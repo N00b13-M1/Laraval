@@ -56,8 +56,10 @@ Route::post("back/facts/store", [FactsItemController::class, "store"])->name("fa
 
 //Navbar
 Route::get("back/navbar", [NavHeadshotController::class,"index"])->name("navbar.index");
-Route::get("back/navbar", [NavLinkController::class, "index"])->name("navbar.index");
-Route::get("back/navbar", [NavSocialController::class, "index"])->name("navbar.index");
+// Route::get("back/navbar", [NavLinkController::class, "index"])->name("navbar.index");
+// Route::get("back/navbar", [NavSocialController::class, "index"])->name("navbar.index");
+Route::get("back/navbar/{id}/edit", [NavHeadshotController::class, "edit"])->name('navbar.edit');
+Route::post("back/navbar/{id}/update", [NavHeadshotController::class, "update"])->name('navbar.update');
 
 //Portfolio
 Route::get("back/portfolio", [PortfolioItemController::class, "index"])->name("portfolio.index");

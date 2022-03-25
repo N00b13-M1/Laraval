@@ -29,7 +29,7 @@
                         <tr>
                             <th scope='row'>{{ $portfolio_item->id }}</th>
                             <td>{{ $portfolio_item->filter}}</td>
-                            <td>{{ $portfolio_item->source}}</td>
+                            <td><img src="{{asset("img/" .$portfolio_item->source)}}" width="150px" alt=""></td>
                             <td>{{ $portfolio_item->href1}}</td>
                             <td>{{ $portfolio_item->title1}}</td>
                             <td>{{ $portfolio_item->href2 }}</td>
@@ -56,4 +56,4 @@
     @include('back/partials/footer')
 @endsection
 
-ghjhgjgjdfggdggdsfdfsgfdfdfdgdfvdfvdfvdfvdfgdfgd
+

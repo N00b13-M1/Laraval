@@ -5,11 +5,16 @@
     <main id="main">
         <div class="back">
             <h1 class="text-center mx-auto">Edit Testimonial</h1>
-            {{-- @if (session()->has('message'))
+            @if (session()->has('success'))
                 <div class="alert alert-success">
-                    {{ session()->get('message') }}
+                    {{ session()->get('success') }}
                 </div>
             @endif
+            @if (session()->has('failure'))
+            <div class="alert alert-danger">
+                {{ session()->get('failure') }}
+            </div>
+        @endif
 
             @if ($errors->any())
                 <div class="alert alert-danger">

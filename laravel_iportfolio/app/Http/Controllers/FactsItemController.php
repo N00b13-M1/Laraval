@@ -36,6 +36,11 @@ class FactsItemController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'icon' => 'required',
+            'number' => 'required',
+            'strong'=> 'required',
+        ]);
         $facts_item = new Facts_item();
         $facts_item->icon = $request->icon;
         $facts_item->number = $request->number;
@@ -43,9 +48,10 @@ class FactsItemController extends Controller
         $facts_item->p = $request->p;
 
         $facts_item->save();
-        return redirect()->route('facts.index');
+        return redirect()->route('facts.index')->with("success", "Successfully added");
     }
 
+    
     /**
      * Display the specified resource.
      *
@@ -78,6 +84,12 @@ class FactsItemController extends Controller
      */
     public function update($id, Request $request)
     {
+        $validated = $request->validate([
+            'icon' => 'required',
+            'number' => 'required',
+            'strong'=> 'required',
+        ]);
+
         $facts_item = Facts_item::find($id);
         $facts_item->icon = $request->icon;
         $facts_item->number = $request->number;
@@ -85,7 +97,7 @@ class FactsItemController extends Controller
         $facts_item->p = $request->p;
 
         $facts_item->save();
-        return redirect()->route('facts.index');
+        return redirect()->route('facts.index')->with("update", "Successfully Updated");
     }
 
     /**
@@ -98,7 +110,7 @@ class FactsItemController extends Controller
     {
         $facts_item = Facts_item::find($id);
         $facts_item->delete();
-        return redirect()->back();
+        return redirect()->back()->with("delete", "Successfully Deleted");
     }
 }
 

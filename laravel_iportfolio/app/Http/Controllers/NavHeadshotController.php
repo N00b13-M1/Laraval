@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\NavHeadshot;
+use App\Models\Nav_link;
+use App\Models\Nav_social;
 use Illuminate\Http\Request;
 
 class NavHeadshotController extends Controller
@@ -15,7 +17,9 @@ class NavHeadshotController extends Controller
     public function index()
     {
         $navheadshot = NavHeadshot::first();
-        return view("back.pages.navbar.navbar", compact("navheadshot"));
+        $nav_links = Nav_link::all();
+        $nav_socials = Nav_social::all();
+        return view("back.pages.navbar.navbar", compact("navheadshot", "nav_links","nav_socials"));
     }
 
     /**
@@ -56,9 +60,13 @@ class NavHeadshotController extends Controller
      * @param  \App\Models\NavHeadshot  $navHeadshot
      * @return \Illuminate\Http\Response
      */
-    public function edit(NavHeadshot $navHeadshot)
+    public function edit($id)
     {
-        //
+        $navheadshot = NavHeadshot::find($id);
+        $nav_link = Nav_link::find($id);
+        $nav_social = Nav_social::find($id);
+        // dd($navheadshot);
+        return view("back.pages.navbar.edit", compact("navheadshot", "nav_link","nav_social"));
     }
 
     /**

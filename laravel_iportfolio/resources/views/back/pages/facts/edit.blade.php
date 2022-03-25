@@ -1,3 +1,4 @@
+
 @extends('back/layouts/app')
 @section('content')
     @include('back/partials/mobile')
@@ -5,12 +6,7 @@
     <main id="main">
         <div class="back">
             <h1 class="text-center mx-auto">Edit Facts</h1>
-            {{-- @if (session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session()->get('message') }}
-                </div>
-            @endif
-
+            
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -19,7 +15,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif --}}
+            @endif
             <form class="mx-5" action="{{route("facts.update", $facts_item->id)}}" method="post">
                 @csrf
                 <div class="mb-3">

@@ -97,9 +97,17 @@ class TestimonialItemController extends Controller
      */
     public function destroy($id)
     {
-        $testimonial_item = Testimonial_item::find($id);
-        $testimonial_item->delete();
-        return redirect()->back();
+        $testimonial = Testimonial_item::all();
+        dd($testimonial);
+        if(count($testimonial)>1){
+            $testimonial_item = Testimonial_item::find($id);
+            $testimonial_item->delete();
+            return redirect()->back()->with('success', 'Successfully Deleted'); 
+
+        
+        } else {
+            return redirect()->back()->with('failure', 'Always 1 left'); 
+        }
     }
 }
 

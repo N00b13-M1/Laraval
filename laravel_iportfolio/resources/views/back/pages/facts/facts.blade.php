@@ -7,6 +7,24 @@
             <h1 class="text-center m-auto">Facts Table</h1>
             {{-- <a class='btn btn-success' href='{{ route('fact.create') }}' role='button'>Create</a> --}}
             <form action="{{ route('facts.create') }}" method="get" class="text-center m-2">
+                {{-- Alert Testimonial Added --}}
+                @if (session()->has('success'))
+                <div class="alert alert-success w-75 mx-auto m-3">
+                    <p>{{ session()->get('success') }}</p>
+                </div>
+                @endif
+                {{-- Alert Testimonial Updated --}}
+                @if (session()->has('update'))
+                <div class="alert alert-warning w-25 m-3">
+                    <p>{{ session()->get('update') }}</p>
+                </div>
+                @endif
+                {{-- Alert Testimonial Deleted --}}
+                @if (session()->has('delete'))
+                <div class="alert alert-danger w-75 mx-auto m-3">
+                    <p>{{ session()->get('delete') }}</p>
+                </div>
+                @endif
         
                 <button class="btn btn-success" type="submit">Create Fact</button>
             </form>

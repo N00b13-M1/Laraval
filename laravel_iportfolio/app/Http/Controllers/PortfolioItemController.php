@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio_item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PortfolioItemController extends Controller
 {
@@ -39,13 +40,14 @@ class PortfolioItemController extends Controller
     {
         $portfolio_item = new Portfolio_item();
         $portfolio_item->filter = $request->filter;
-        $portfolio_item->source = $request->source;
+        $portfolio_item->source = $request->file("source")->hashName();
         $portfolio_item->href1 = $request->href1;
         $portfolio_item->title1 = $request->title1;
         $portfolio_item->href2 = $request->href2;
         $portfolio_item->title2 = $request->title2;
 
         $portfolio_item->save();
+        $request->file("source")->storePublicly("img", "public");
         return redirect()->route('portfolio.index');
     }
 
@@ -82,26 +84,40 @@ class PortfolioItemController extends Controller
     public function update($id, Request $request)
     {
         $portfolio_item = Portfolio_item::find($id);
+        $chemin = 'img/' . $portfolio_item->source;
+        if (File::exists($chemin)) {
+            # code...
+            File::delete($chemin);
+        }
+
+
         $portfolio_item->filter = $request->filter;
-        $portfolio_item->source = $request->source;
+        $portfolio_item->source = $request->file("source")->hashName();
+
         $portfolio_item->href1 = $request->href1;
         $portfolio_item->title1 = $request->title1;
         $portfolio_item->href2 = $request->href2;
         $portfolio_item->title2 = $request->title2;
-
         $portfolio_item->save();
+        $request->file("source")->storePublicly("img", "public");
         return redirect()->route('portfolio.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Portfolio_item  $portfolio_item
-     * @return \Illuminate\Http\Response
+     * $\Response
      */
     public function destroy($id)
     {
         $portfolio_item = Portfolio_item::find($id);
+        // $image_path = public_path().'/'.$portfolio_item->filename;
+        // unlink($image_path);
+        // $destination = "img/" . $portfolio_item->source;
+        // if (File::exists($destination)) 
+        // {
+        //     File::delete($destination);
+        // }
         $portfolio_item->delete();
         return redirect()->back();
     }

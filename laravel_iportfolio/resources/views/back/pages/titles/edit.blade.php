@@ -5,12 +5,11 @@
     <main id="main">
         <div class="back">
             <h1 class="text-center mx-auto">Edit Testimonial</h1>
-            {{-- @if (session()->has('message'))
+            @if (session()->has('message'))
                 <div class="alert alert-success">
                     {{ session()->get('message') }}
                 </div>
             @endif
-
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -19,7 +18,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif --}}
+            @endif
             <form class="mx-5" action="{{route("titles.update", $title->id)}}" method="post">
                 @csrf
                 <div class="mb-3">

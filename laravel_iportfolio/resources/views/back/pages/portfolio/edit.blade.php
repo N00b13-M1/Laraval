@@ -20,7 +20,7 @@
                     </ul>
                 </div>
             @endif --}}
-            <form class="mx-5" action="{{route("portfolio.update", $portfolio_item->id)}}" method="post">
+            <form class="mx-5" action="{{route("portfolio.update", $portfolio_item->id)}}" enctype="multipart/form-data" method="post">
                 @csrf
                 <div class="mb-3">
                         <label for="filter" class="form-label">Filter</label>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="source" class="form-label">Source</label>
-                    <input type="text" class="form-control" id="source" value="{{ $portfolio_item->source }}" name="source">
+                    <input type="file" class="form-control" id="source" value="{{ $portfolio_item->source }}" name="source">
                 </div>
                 <div class="mb-3">
                     <label for="href1" class="form-label">Href 1</label>
