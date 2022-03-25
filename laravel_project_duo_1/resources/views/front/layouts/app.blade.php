@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/templatemo-seo-dream.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animated.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.css') }}">
-    <link rel="stylesheet" href='@fortawesome/fontawesome-free/css/all.min.css'>
+    <link rel="stylesheet" href='{{ asset("@fortawesome/fontawesome-free/css/all.min.css") }}'>
     
 {{-- TemplateMo 563 SEO Dream
 
