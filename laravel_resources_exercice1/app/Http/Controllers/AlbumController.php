@@ -14,7 +14,9 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        //
+        $albums = Album::all();
+        // dd($albums);
+        return view("back.pages.albums.albums", compact("albums"));
     }
 
     /**
@@ -83,3 +85,4 @@ class AlbumController extends Controller
         //
     }
 }
+

@@ -35,11 +35,12 @@
     <link href="{{ url("https://fonts.googleapis.com/icon?family=Material+Icons+Round") }}" rel="stylesheet">
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset("css/material-dashboard.css?v=3.0.0") }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset("css/backend.css") }}">
+    <link rel="stylesheet" href=" {{asset('css/app.css')}}">
 </head>
 
-<body class="g-sidenav-show  bg-gray-200">
+<body class="g-sidenav-show bg-gray-200">
     @yield('content')
-
     <!--   Core JS Files   -->
     <script src="{{ asset("js/core/popper.min.js") }}"></script>
     <script src="{{ asset("js/core/bootstrap.min.js") }}"></script>
@@ -303,7 +304,7 @@
         }
     </script>
     <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async defer src="{{ url("https://buttons.github.io/buttons.js") }}"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="{{ asset("js/material-dashboard.min.js?v=3.0.0") }}"></script>
 </body>

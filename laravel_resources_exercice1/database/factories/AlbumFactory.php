@@ -17,7 +17,11 @@ class AlbumFactory extends Factory
     public function definition()
     {
         return [
-            //
+        "name"=>$this->faker->text($maxNbChars = 5),
+        "description"=>$this->faker->text($maxNbChars = 20),
+        "author"=>$this->faker->name,
+        "number_of_photos"=>$this->faker->numberBetween(0,100),
+        "created_at"=>now()
         ];
     }
 }

@@ -17,7 +17,10 @@ class PhotoFactory extends Factory
     public function definition()
     {
         return [
-            //
-        ];
+            "name"=>$this->faker->text($maxNbChars = 5),
+            "link"=>$this->faker->image('public/storage/img',640,480,null,false),
+            "name_of_album"=>$this->faker->text($maxNbChars = 5),
+            "created_at"=>now()
+            ];
     }
 }
