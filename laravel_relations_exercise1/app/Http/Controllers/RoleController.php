@@ -28,7 +28,6 @@ class RoleController extends Controller
     {
         return view("back.pages.roles.create");
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -50,9 +49,12 @@ class RoleController extends Controller
      * @param  \App\Models\Role  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
+    public function show($id)
     {
-        //
+        $role = Role::find($id);
+        // dd($role);
+        return view("back.pages.roles.show", compact('role'));
+
     }
 
     /**
@@ -97,3 +99,4 @@ class RoleController extends Controller
         return redirect()->back();
     }
 }
+

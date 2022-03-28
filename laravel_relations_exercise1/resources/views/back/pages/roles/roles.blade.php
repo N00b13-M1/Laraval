@@ -5,8 +5,8 @@
         <h2 class="text-center">Roles Table</h2>
     </section>
     <section>
-        <form action="" method="get" class="text-center m-2">
-            <button class="btn btn-success" type="submit">Create</button>
+        <form action="{{ route('roles.create') }}" method="get" class="text-center m-2">
+            <button class="btn btn-success" type="submit">Create Role</button>
         </form>
         <div class="container bg-secondary">
             <table class="table table-condensed">
@@ -27,7 +27,7 @@
                             <td>{{ $role->last_name }}</td>
                             <td>{{ $role->created_at }}</td>
                             <td>
-                                <form action="" method="get">
+                                <form action="{{ route('roles.read', $role->id) }}" method="get">
                                     @csrf
                                     <button class="btn btn-warning" type="submit">Read</button>
                                 </form>

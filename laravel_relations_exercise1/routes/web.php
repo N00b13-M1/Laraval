@@ -23,15 +23,18 @@ Route::get('/back', [BackController::class, 'index'])->name("back.index");
 
 //Users
 
-Route::get('/back/users', [UserController::class, 'index'])->name("users.index");
+Route::get('back/users', [UserController::class, 'index'])->name("users.index");
 
-// Route::get("back/users/{id}", [RoleController::class, "edit"]);
-// Route::post("/update/portfolio_items/{id}", [RoleController::class, "update"])->name('roles.update');
+Route::get('back/users/{id}/edit', [UserController::class, 'edit'])->name("users.edit");
+Route::post('back/users/{id}/edit', [UserController::class, 'update'])->name("users.update");
 
-// Route::get("back/roles/create", [RoleController::class, 'create'])->name("roles.create");
-// Route::post("back/roles/store", [RoleController::class, 'store'])->name("roles.store");
+Route::get('back/users/new', [UserController::class, 'create'])->name("users.create");
+Route::post('back/users', [UserController::class, 'store'])->name("users.store");
 
-// Route::get("/back/roles/{id}/delete", [RoleController::class, "destroy"])->name("roles.destroy");
+Route::post('back/users/{id}/delete', [UserController::class, 'destroy'])->name("users.destroy");
+
+Route::get('back/users/{id}/read', [UserController::class, 'show'])->name("users.read");
+
 
 //Roles
 
@@ -41,10 +44,10 @@ Route::get('back/roles', [RoleController::class, 'index'])->name("roles.index");
 Route::get('back/roles/{id}/edit', [RoleController::class, 'edit'])->name("roles.edit");
 Route::post('back/roles/{id}/edit', [RoleController::class, 'update'])->name("roles.update");
 
-Route::get('back/pages/roles/new', [RoleController::class, 'create'])->name("roles.create");
+Route::get('back/roles/new', [RoleController::class, 'create'])->name("roles.create");
 Route::post('back/roles', [RoleController::class, 'store'])->name("roles.store");
 
 Route::post('back/roles/{id}/delete', [RoleController::class, 'destroy'])->name("roles.destroy");
 
-Route::get('back/roles/{id}/read', [RoleController::class, 'read'])->name("roles.read");
+Route::get('back/roles/{id}/read', [RoleController::class, 'show'])->name("roles.read");
 

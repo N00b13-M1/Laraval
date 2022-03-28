@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Http\Controllers;
@@ -57,9 +56,11 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show( $id)
     {
-        //
+        $user = User::find($id);
+        return view("back.pages.users.show", compact('user'));
+
     }
 
     /**
