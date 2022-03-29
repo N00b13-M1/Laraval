@@ -3,6 +3,15 @@
     @include('back/partials/navbar')
     <div class="row test text-center d-flex justify-content-center align-items-start">
         <h1>Create Role</h1>
+        @if ($errors->any())
+            <div class="alert alert-danger w-75 text-center">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form class="mx-5" action="{{ route('roles.store') }}" method="post">
             @csrf
             <div class="mb-3">

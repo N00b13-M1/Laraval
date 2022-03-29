@@ -21,10 +21,14 @@ class UserFactory extends Factory
             "given_name"=>$this->faker->firstName(),
             "age"=>$this->faker->numberBetween(0,130),
             "email"=>$this->faker->email(),
-            "password"=>$this->faker->password(),
+            "password"=>bcrypt($this->faker->password()),
             "date_of_birth"=>$this->faker->date($format = 'Y-m-d', $max = 'now'),
             "genre"=>$this->faker->domainword(),
+            "role_id"=>$this->faker->numberBetween(1,4),
             "created_at"=>now()
         ];
     }
 }
+
+
+

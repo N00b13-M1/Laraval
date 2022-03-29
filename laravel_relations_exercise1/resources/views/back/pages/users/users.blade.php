@@ -20,6 +20,7 @@
                         <th>Password</th>
                         <th>DoB</th>
                         <th>Genre</th>
+                        <th>Role</th>
                         <th>Created at</th>
                         <th>Read</th>
                         <th>Edit</th>
@@ -37,6 +38,7 @@
                             <td>{{ $user->password }}</td>
                             <td>{{ $user->date_of_birth }}</td>
                             <td>{{ $user->genre }}</td>
+                            <td>{{ $user->role->last_name }}</td>
                             <td>{{ $user->created_at }}</td>
                             <td>
                                 <form action="{{ route('users.read', $user->id) }}" method="get">
@@ -61,6 +63,24 @@
                 @endforeach
             </table>
         </div>
-    <section>
+        {{-- Alert Testimonial Added --}}
+        @if (session()->has('success'))
+            <div class="alert alert-success w-25 mx-auto m-3">
+                <p>{{ session()->get('success') }}</p>
+            </div>
+        @endif
+        {{-- Alert Testimonial Updated --}}
+        @if (session()->has('update'))
+            <div class="alert alert-warning w-25 mx-auto m-3">
+                <p>{{ session()->get('update') }}</p>
+            </div>
+        @endif
+        {{-- Alert Testimonial Deleted --}}
+        @if (session()->has('delete'))
+            <div class="alert alert-danger w-25 mx-auto m-3">
+                <p>{{ session()->get('delete') }}</p>
+            </div>
+        @endif
+        <section>
     @include('back/partials/footer')
 @endsection

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -26,7 +28,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view("back.pages.users.create");
+        $roles = Role::all();
+        return view("back.pages.users.create", compact("roles"));
     }
 
     /**
@@ -37,6 +40,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'last_name' => 'required',
+            'given_name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'date_of_birth' => 'required',
+        ]);
+
+
         $user = new User();
         $user->last_name = $request->last_name;
         $user->given_name = $request->given_name;
@@ -45,9 +57,11 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->date_of_birth = $request->date_of_birth;
         $user->genre = $request->genre;
+        $user->role_id = $request->role_id;
         $user->save();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with("success", "Successfully added");
+
     }
 
     /**
@@ -72,7 +86,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view("back.pages.users.edit", compact('user'));
+        $roles = Role::all();
+        return view("back.pages.users.edit", compact('user',"roles" ));
     }
 
     /**
@@ -84,6 +99,14 @@ class UserController extends Controller
      */
     public function update($id, Request $request)
     {
+        $request->validate([
+            'last_name' => 'required',
+            'given_name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'date_of_birth' => 'required',
+        ]);
+        
         $user = User::find($id);
         $user->last_name = $request->last_name;
         $user->given_name = $request->given_name;
@@ -92,9 +115,10 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->date_of_birth = $request->date_of_birth;
         $user->genre = $request->genre;
+        $user->role_id = $request->role_id;
         $user->save();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with("update", "Successfully Updated");
 
     }
 
@@ -108,6 +132,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect()->back();
+        return redirect()->back()->with("delete", "Successfully Deleted");
     }
 }
+

@@ -36,11 +36,15 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'last_name' => 'required',
+        ]);
+        
         $role = new Role();
         $role->last_name = $request->last_name;
         $role->save();
 
-        return redirect()->route('roles.index');
+        return redirect()->route('roles.index')->with("success", "Successfully added");
     }
 
     /**
@@ -78,11 +82,15 @@ class RoleController extends Controller
      */
     public function update($id, Request $request)
     {
+        $request->validate([
+            'last_name' => 'required',
+        ]);
+        
         $role = Role::find($id);
         $role->last_name = $request->last_name;
         $role->save();
 
-        return redirect()->route('roles.index');
+        return redirect()->route('roles.index')->with("update", "Successfully Updated");
 
     }
 
@@ -96,7 +104,6 @@ class RoleController extends Controller
     {
         $role = Role::find($id);
         $role->delete();
-        return redirect()->back();
+        return redirect()->back()->with("delete", "Successfully Deleted");
     }
 }
-

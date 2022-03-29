@@ -50,4 +50,3 @@ Route::post('back/roles', [RoleController::class, 'store'])->name("roles.store")
 Route::post('back/roles/{id}/delete', [RoleController::class, 'destroy'])->name("roles.destroy");
 
 Route::get('back/roles/{id}/read', [RoleController::class, 'show'])->name("roles.read");
-

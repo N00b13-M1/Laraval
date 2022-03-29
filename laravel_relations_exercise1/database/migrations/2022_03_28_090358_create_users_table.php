@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string("password");
             $table->date("date_of_birth");
             $table->string("genre");
+            $table->foreignID("role_id")->constrained("roles", "id");
             $table->timestamps();
         });
     }

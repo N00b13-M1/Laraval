@@ -49,6 +49,24 @@
                 @endforeach
             </table>
         </div>
+        {{-- Alert Testimonial Added --}}
+        @if (session()->has('success'))
+            <div class="alert alert-success w-25 mx-auto m-3">
+                <p>{{ session()->get('success') }}</p>
+            </div>
+        @endif
+        {{-- Alert Testimonial Updated --}}
+        @if (session()->has('update'))
+            <div class="alert alert-warning w-25 mx-auto m-3">
+                <p>{{ session()->get('update') }}</p>
+            </div>
+        @endif
+        {{-- Alert Testimonial Deleted --}}
+        @if (session()->has('delete'))
+            <div class="alert alert-danger w-25 mx-auto m-3">
+                <p>{{ session()->get('delete') }}</p>
+            </div>
+        @endif
     <section>
     @include('back/partials/footer')
 @endsection
