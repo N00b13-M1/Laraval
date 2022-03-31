@@ -15,9 +15,9 @@
         <form class="mx-5" action="{{ route('positions.update', $position->id) }}" method="post">
             @csrf
             <div class="mb-3">
-                <label for="img" class="form-label">Position</label>
-                <input type="text" class="form-control w-50 mx-auto" id="img" value="{{ $position->position }}"
-                    name="img">
+                <label for="position" class="form-label">Position</label>
+                <input type="text" class="form-control w-50 mx-auto" id="position" value="{{ $position->position }}"
+                    name="position">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

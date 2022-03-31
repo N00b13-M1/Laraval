@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
     use HasFactory;
+    protected $table = 'photos';
+
+    public function player()
+    {
+        return $this->belongsTo(Player::class);
+    }
 }

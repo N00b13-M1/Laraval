@@ -12,11 +12,11 @@
                 </ul>
             </div>
         @endif
-        <form class="mx-5" action="{{ route('photos.update', $photo->id) }}" method="post">
+        <form class="mx-5" action="{{ route('photos.update', $photo->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="img" class="form-label">Image</label>
-                <input type="text" class="form-control w-50 mx-auto" id="img" value="{{ $photo->img }}"
+                <input type="file" class="form-control w-50 mx-auto" id="img" value="{{ $photo->img }}"
                     name="img">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

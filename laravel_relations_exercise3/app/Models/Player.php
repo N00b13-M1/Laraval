@@ -16,4 +16,9 @@ class Player extends Model
         return $this->belongsTo(Position::class);
         
     }
+
+    public function photo()
+    {
+        return $this->hasOne(Photo::class);
+    }
 }

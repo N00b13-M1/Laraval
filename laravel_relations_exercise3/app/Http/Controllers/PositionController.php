@@ -90,7 +90,6 @@ class PositionController extends Controller
         $position->save();
 
         return redirect()->route('positions.index')->with("update", "Successfully Updated");
-
     }
 
     /**

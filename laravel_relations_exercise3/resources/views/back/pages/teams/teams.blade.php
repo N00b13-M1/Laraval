@@ -13,7 +13,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
+                        <th>Team Name</th>
                         <th>City</th>
                         <th>Country</th>
                         <th>Number of Players</th>
