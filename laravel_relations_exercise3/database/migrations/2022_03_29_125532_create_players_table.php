@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id();
+            $table->string("last_name");
+            $table->string("given_name");
+            $table->integer("age");
+            $table->string("telephone");
+            $table->string("email");
+            $table->string("genre");
+            $table->string("country_of_origin");
+            $table->foreignId("position_id")->constrained("positions", "id");
             $table->timestamps();
         });
     }

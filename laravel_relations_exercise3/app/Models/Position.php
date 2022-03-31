@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Player extends Model
+class Position extends Model
 {
     use HasFactory;
 
-    protected $table = 'players';
+    protected $table = 'positions';
 
-    public function position()
+    public function players()
     {
-        return $this->belongsTo(Position::class);
-        
+        return $this->hasMany(Player::class);
     }
+
+
 }

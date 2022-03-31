@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 use app\Models\Role;
 use app\Models\User;
 
-class BackController extends Controller
+class HomeController extends Controller
 {
     public function index(){
-        return view("back/pages/back");
+        return view("home");
     }
 }
-
-

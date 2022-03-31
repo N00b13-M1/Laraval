@@ -12,5 +12,3 @@ class BackController extends Controller
         return view("back/pages/back");
     }
 }
-
-

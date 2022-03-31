@@ -14,7 +14,8 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        $players = Player::all();
+        return view('back.pages.players.players', compact("players"));
     }
 
     /**
@@ -22,9 +23,10 @@ class PlayerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        //$player = Player::find($id);
+        return view('back.pages.players.create');
     }
 
     /**
@@ -44,9 +46,10 @@ class PlayerController extends Controller
      * @param  \App\Models\Player  $player
      * @return \Illuminate\Http\Response
      */
-    public function show(Player $player)
+    public function show( $id )
     {
-        //
+        //$player = Player::find($id);
+        return view('back.pages.players.show');
     }
 
     /**
@@ -55,9 +58,10 @@ class PlayerController extends Controller
      * @param  \App\Models\Player  $player
      * @return \Illuminate\Http\Response
      */
-    public function edit(Player $player)
+    public function edit($id)
     {
-        //
+        //$player = Player::find($id);
+        return view('back.pages.players.edit');
     }
 
     /**

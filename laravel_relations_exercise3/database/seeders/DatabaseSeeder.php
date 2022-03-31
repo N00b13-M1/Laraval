@@ -14,6 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        
+        $this->call([
+            PositionSeeder::class,
+        ]);
+        \App\Models\Photo::factory(20)->create();
+        \App\Models\Player::factory(20)->create();
+        \App\Models\Team::factory(5)->create();
     }
 }

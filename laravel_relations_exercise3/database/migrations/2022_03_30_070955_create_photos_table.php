@@ -13,16 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("city");
-            $table->string("country");
-            $table->integer("number_players");
-            $table->integer("number_forwards");
-            $table->integer("number_midfielders");
-            $table->integer("number_defenders");
-            $table->integer("number_substitutes");
+            $table->string("img");
             $table->timestamps();
         });
     }
@@ -34,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('photos');
     }
 };

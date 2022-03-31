@@ -14,7 +14,9 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        $teams = Team::all();
+        // dd($teams);
+        return view("back.pages.teams.teams",compact('teams'));
     }
 
     /**
