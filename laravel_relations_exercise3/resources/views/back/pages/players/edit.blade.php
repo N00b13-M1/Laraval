@@ -59,3 +59,4 @@
     </div>
     @include('back/partials/footer')
 @endsection
+

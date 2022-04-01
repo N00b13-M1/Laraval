@@ -37,8 +37,8 @@
                             <td>{{ $player->email }}</td>
                             <td>{{ $player->genre }}</td>
                             <td>{{ $player->country_of_origin }}</td>
-                            <td>{{ $player->position->position }}</></td>
-                            <td>{{ $player->photo->img }}
+                            <td>{{ $player->position->position }}</td>
+                            <td><img src="{{ asset($player->photo->img)}}"</td>
                             <td>
                                 <form action="{{ route('players.read', $player->id) }}" method="get">
                                     @csrf

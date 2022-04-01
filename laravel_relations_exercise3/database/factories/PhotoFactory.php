@@ -16,9 +16,11 @@ class PhotoFactory extends Factory
      */
     public function definition()
     {
+        static $i = 0;
+        $i++;
         return [
-            "img"=> $this->faker->image($dir = '/tmp', $width = 50, $height = 50),
-            "player_id" => $this->faker->numberBetween(1,20),
+            "img"=> $this->faker->imageUrl($width = 100, $height = 100, 'cats'),
+            "player_id" => $i
         ];
     }
 }

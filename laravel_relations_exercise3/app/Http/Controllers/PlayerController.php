@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Photo;
 use App\Models\Player;
 use Illuminate\Http\Request;
 
@@ -57,6 +58,11 @@ class PlayerController extends Controller
         $player->country_of_origin = $request->country_of_origin;
         $player->position_id = $player->position_id;
         $player->save();
+        $photo= new Photo();
+        $photo->img = $request->img;
+        $photo->player_id = $player->id;
+        $photo->save();
+
 
         return redirect()->route('positions.index')->with("success", "Successfully added");
     }

@@ -44,7 +44,7 @@ class PhotoController extends Controller
         $photo->img = $request->file("img")->hashName();
         $photo->save();
 
-        $request->file("image")->storePublicly("img", "public");
+        $request->file("img")->storePublicly("img", "public");
 
         return redirect()->route('photos.index')->with("success", "Successfully added");
 
