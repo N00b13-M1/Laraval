@@ -38,7 +38,7 @@
                             <td>{{ $user->password }}</td>
                             <td>{{ $user->date_of_birth }}</td>
                             <td>{{ $user->genre }}</td>
-                            <td>{{ $user->role->last_name }}</td>
+                            <td>{{ $user->role->position }}</td>
                             <td>{{ $user->created_at }}</td>
                             <td>
                                 <form action="{{ route('users.read', $user->id) }}" method="get">

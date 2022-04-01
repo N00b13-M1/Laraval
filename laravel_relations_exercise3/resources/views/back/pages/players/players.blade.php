@@ -11,7 +11,6 @@
         <div class="container bg-secondary">
             <table class="table table-condensed">
                 <thead>
-                    <tr>
                         <th>ID</th>
                         <th>Last Name</th>
                         <th>Given Name</th>
@@ -21,6 +20,7 @@
                         <th>Genre</th>
                         <th>Country</th>
                         <th>Position</th>
+                        <th>Photo</th>
                         <th>Read</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -38,6 +38,7 @@
                             <td>{{ $player->genre }}</td>
                             <td>{{ $player->country_of_origin }}</td>
                             <td>{{ $player->position->position }}</></td>
+                            <td>{{ $player->photo->img }}
                             <td>
                                 <form action="{{ route('players.read', $player->id) }}" method="get">
                                     @csrf

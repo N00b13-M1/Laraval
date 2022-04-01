@@ -40,7 +40,7 @@ class TeamController extends Controller
         $request->validate([
             'name' => 'required',
             'city' => 'required',
-            // 'country' => 'required',
+            'country' => 'required',
             'number_players' => 'required',
             'number_forwards' => 'required',
             'number_midfielders' => 'required',

@@ -13,7 +13,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Last Name</th>
+                        <th>Position</th>
                         <th>Created at</th>
                         <th>Read</th>
                         <th>Edit</th>
@@ -24,7 +24,7 @@
                     <tbody>
                         <tr>
                             <td>{{ $role->id }}</td>
-                            <td>{{ $role->last_name }}</td>
+                            <td>{{ $role->position }}</td>
                             <td>{{ $role->created_at }}</td>
                             <td>
                                 <form action="{{ route('roles.read', $role->id) }}" method="get">

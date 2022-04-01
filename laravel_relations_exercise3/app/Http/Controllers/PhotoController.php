@@ -93,7 +93,6 @@ class PhotoController extends Controller
         $request->file("image")->storePublicly("img", "public");
 
         return redirect()->route('photos.index')->with("update", "Successfully Updated");
-
     }
 
     /**

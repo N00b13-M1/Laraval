@@ -16,5 +16,4 @@ class Position extends Model
         return $this->hasMany(Player::class);
     }
 
-
 }

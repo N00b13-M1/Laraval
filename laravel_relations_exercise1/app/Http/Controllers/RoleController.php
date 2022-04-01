@@ -41,7 +41,7 @@ class RoleController extends Controller
         ]);
         
         $role = new Role();
-        $role->last_name = $request->last_name;
+        $role->position = $request->position;
         $role->save();
 
         return redirect()->route('roles.index')->with("success", "Successfully added");
@@ -87,7 +87,7 @@ class RoleController extends Controller
         ]);
         
         $role = Role::find($id);
-        $role->last_name = $request->last_name;
+        $role->position = $request->position;
         $role->save();
 
         return redirect()->route('roles.index')->with("update", "Successfully Updated");

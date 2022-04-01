@@ -17,7 +17,7 @@ class RoleFactory extends Factory
     public function definition()
     {
         return [
-            "last_name"=>$this->faker->lastName(),
+            "position"=>$this->faker->jobTitle,
             "created_at"=>now()
         ];
     }

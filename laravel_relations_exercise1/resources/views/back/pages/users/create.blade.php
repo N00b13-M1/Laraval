@@ -43,17 +43,17 @@
                 <input type="text" class="form-control w-50 mx-auto" id="genre" name="genre">
             </div>
             <div>
-                <select name="role_id" class="form-control">
+                <select name="role_id" class="form-control w-50 mx-auto">
                     <option>Select Role</option>
                     <!--selected by default-->
                     @foreach ($roles as $role)
                         <option value="{{ $role->id }}">
-                            {{ $role->last_name }}
+                            {{ $role->position }}
                         </option>
                     @endforeach
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary my-3">Submit</button>
         </form>
     </div>
     @include('back/partials/footer')

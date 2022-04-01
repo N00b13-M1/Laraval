@@ -22,7 +22,7 @@
                     <tbody>
                         <tr>
                             <td>{{ $photo->id }}</td>
-                            <td><img src="{{ asset($photo->img) }}" alt="" srcset="">
+                            <td><img src="{{ asset("$photo->img") }}" alt="" srcset="">
                                 </td>
                             <td>
                                 <form action="{{ route('photos.edit', $photo->id) }}" method="get">

@@ -33,7 +33,11 @@
                 <label for="genre" class="form-label">Genre</label>
                 <input type="text" class="form-control w-50 mx-auto" id="genre" value="{{ $user->genre }}" name="genre" readonly>
             </div>
-            <button type="submit" class="btn btn-primary">Return</button>
+            <div class="mb-3">
+                <label for="role" class="form-label">Position</label>
+                <input type="text" class="form-control w-50 mx-auto" id="role" value="{{ $user->role->position}}" name="role" readonly>
+            </div>
+            <button type="submit" class="btn btn-primary my-3">Return</button>
         </form>
     </div>
     @include('back/partials/footer')
