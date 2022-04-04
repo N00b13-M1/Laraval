@@ -54,6 +54,15 @@
                 <input type="position_id" class="form-control w-50 mx-auto" id="number_substitutes" value="{{ $player->position_id }}"
                     name="position_id" readonly>
             </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <div><img src="{{ asset($player->photo->img)}}"></div>
+            </div>
+            <div class="mb-3">
+                <label for="team_name" class="form-label">Team Name</label>
+                <input type="team_name" class="form-control w-50 mx-auto" id="team_name" value="{{ $player->team->name }}"
+                    name="team_name" readonly>
+            </div>
             <button type="submit" class="btn btn-primary">Return</button>
         </form>
     </div>

@@ -30,6 +30,11 @@
                     name="country">
             </div>
             <div class="mb-3">
+                <label for="continent" class="form-label">Continent</label>
+                <input type="text" class="form-control w-50 mx-auto" id="continent" value="{{ $team->continent }}"
+                    name="continent">
+            </div>
+            <div class="mb-3">
                 <label for="number_players" class="form-label">Number of Players</label>
                 <input type="number" class="form-control w-50 mx-auto" id="number_players" value="{{ $team->number_players }}"
                     name="number_players">

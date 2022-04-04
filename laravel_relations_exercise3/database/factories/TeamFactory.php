@@ -20,6 +20,7 @@ class TeamFactory extends Factory
             "name"=> $this->faker->company(),
             "city"=> $this->faker->city(),
             "country"=> $this->faker->country(),
+            "continent"=> $this->faker->randomElement(["Europe", "Outside-Europe"]),
             "number_players" => 9,
             "number_forwards" => 2,
             "number_midfielders" => 2,

@@ -21,6 +21,7 @@
                         <th>Country</th>
                         <th>Position</th>
                         <th>Photo</th>
+                        <th>Team</th>
                         <th>Read</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -38,7 +39,8 @@
                             <td>{{ $player->gender }}</td>
                             <td>{{ $player->country_of_origin }}</td>
                             <td>{{ $player->position->position }}</td>
-                            <td><img src="{{ asset($player->photo->img)}}"</td>
+                            <td><img src="{{ asset($player->photo->img)}}"></td>
+                            <td>{{ $player->team->name }}</td>
                             <td>
                                 <form action="{{ route('players.read', $player->id) }}" method="get">
                                     @csrf

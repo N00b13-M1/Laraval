@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("city");
             $table->string("country");
+            $table->string('continent');
             $table->integer("number_players");
             $table->integer("number_forwards");
             $table->integer("number_midfielders");

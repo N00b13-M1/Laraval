@@ -16,6 +16,7 @@
                         <th>Team Name</th>
                         <th>City</th>
                         <th>Country</th>
+                        <th>Continent</th>
                         <th>Number of Players</th>
                         <th>Number of Forwards</th>
                         <th>Number of Midfielders</th>
@@ -33,6 +34,7 @@
                             <td>{{ $team->name }}</td>
                             <td>{{ $team->city }}</td>
                             <td>{{ $team->country }}</td>
+                            <td>{{ $team->continent }}</td>
                             <td>{{ $team->players->count() }} / {{ $team->number_players }}</td>
                             <td>{{ $team->players->where('position_id', 1)->count() }}/{{ $team->number_forwards}}</td>
                             <td>

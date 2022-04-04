@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PhotoController extends Controller
 {
@@ -88,10 +89,14 @@ class PhotoController extends Controller
         ]);
         
         $photo = Photo::find($id);
+        $path = 'img/' . $photo->img;
+        if (File::exists($path)) {
+            File::delete($path);
+        }
         $photo->img = $request->file("img")->hashName();
 
         $photo->save();
-        $request->file("image")->storePublicly("img", "public");
+        $request->file("img")->storePublicly("img", "public");
 
         return redirect()->route('photos.index')->with("update", "Successfully Updated");
     }

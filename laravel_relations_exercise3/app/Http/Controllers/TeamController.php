@@ -57,6 +57,7 @@ class TeamController extends Controller
         $team->name = $request->name;
         $team->city = $request->city;
         $team->country = $request->country;
+        $team->continent = $request->continent;
         $team->number_players = $request->number_players;
         $team->number_forwards = $request->number_forwards;
         $team->number_midfielders = $request->number_midfielders;
@@ -114,6 +115,7 @@ class TeamController extends Controller
         $team->name = $request->name;
         $team->city = $request->city;
         $team->country = $request->country;
+        $team->continent = $request->continent;
         $team->number_players = $request->number_players;
         $team->number_forwards = $request->number_forwards;
         $team->number_midfielders = $request->number_midfielders;

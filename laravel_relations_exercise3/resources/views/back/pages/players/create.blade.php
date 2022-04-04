@@ -49,10 +49,31 @@
                 <input type="text" class="form-control w-50 mx-auto" id="country_of_origin"
                     name="country_of_origin">
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="position_id" class="form-label">Position</label>
                 <input type="position_id" class="form-control w-50 mx-auto" id="number_substitutes" 
                     name="position_id">
+            </div> --}}
+            <div>
+                <select name="position_id" class="form-control w-50 mx-auto">
+                    <option>Position</option>
+                    <!--selected by default-->
+                    @foreach ($positions as $position)
+                        <option value="{{ $position->id }}">
+                            {{ $position->position }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="img" class="form-label">Image</label>
+                <input type="file" class="form-control w-50 mx-auto" id="img"
+                    name="img">
+            </div>
+            <div class="mb-3">
+                <label for="team_name" class="form-label">Team name</label>
+                <input type="team_name" class="form-control w-50 mx-auto" id="team_name" 
+                    name="team_name">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

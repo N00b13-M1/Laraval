@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use App\Models\Player;
+use App\Models\Position;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
@@ -28,7 +30,8 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        return view('back.pages.players.create');
+        $positions = Position::all();
+        return view('back.pages.players.create', compact("positions"));
     }
 
     /**
@@ -60,9 +63,9 @@ class PlayerController extends Controller
         $player->country_of_origin = $request->country_of_origin;
         $player->position_id = $player->position_id;
         $player->save();
-        $photo= new Photo();
+        $photo = new Photo();
         $photo->img = $request->img;
-        $photo->player_id = $player->id;
+        $photo->player_id = $photo->player_id;
         $photo->save();
 
         return redirect()->route('positions.index')->with("success", "Successfully added");
@@ -89,7 +92,10 @@ class PlayerController extends Controller
     public function edit($id)
     {
         $player = Player::find($id);
-        return view('back.pages.players.edit', compact('player'));
+        $positions = Position::all();
+        // $photo = Photo::find($id);
+        // $team = Team::find($id);
+        return view('back.pages.players.edit', compact('player', "positions"));
     }
     /**
      * Update the specified resource in storage.
@@ -106,7 +112,7 @@ class PlayerController extends Controller
         $player->age = $request->age;
         $player->telephone = $request->telephone;
         $player->email = $request->email;
-        $player->genre = $request->genre;
+        $player->gender = $request->gender;
         $player->country_of_origin = $request->country_of_origin;
         $player->position_id = $player->position_id;
         $player->save();
@@ -121,6 +127,8 @@ class PlayerController extends Controller
     public function destroy($id)
     {
         $player = Player::find($id);
+        $photo = Photo::find($id);
+        $photo->delete();
         $player->delete();
         return redirect()->back()->with("delete", "Successfully Deleted");
     }
