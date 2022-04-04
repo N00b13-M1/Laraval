@@ -19,7 +19,7 @@ class PhotoFactory extends Factory
         static $i = 0;
         $i++;
         return [
-            "img"=> $this->faker->imageUrl($width = 100, $height = 100, 'cats'),
+            "img"=> $this->faker->imageUrl(100, 100, 'people'),
             "player_id" => $i
         ];
     }

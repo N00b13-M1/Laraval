@@ -40,9 +40,9 @@
                     name="email" readonly>
             </div>
             <div class="mb-3">
-                <label for="genre" class="form-label">Genre</label>
-                <input type="text" class="form-control w-50 mx-auto" id="genre" value="{{ $player->genre }}"
-                    name="genre" readonly>
+                <label for="gender" class="form-label">Gender</label>
+                <input type="text" class="form-control w-50 mx-auto" id="gender" value="{{ $player->gender }}"
+                    name="gender" readonly>
             </div>
             <div class="mb-3">
                 <label for="country_of_origin" class="form-label">Country of origin</label>

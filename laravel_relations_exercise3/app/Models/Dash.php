@@ -5,14 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Team extends Model
+class Dash extends Model
 {
     use HasFactory;
-
-    protected $table = 'teams';
-
-    public function players(){
-        return $this->hasMany(Player::class);
-    }
 }
-

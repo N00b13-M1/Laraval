@@ -21,4 +21,9 @@ class Player extends Model
     {
         return $this->hasOne(Photo::class);
     }
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }

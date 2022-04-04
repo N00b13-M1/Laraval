@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PositionSeeder::class,
         ]);
-        \App\Models\Player::factory(20)->create();
-        \App\Models\Photo::factory(20)->create();
         \App\Models\Team::factory(5)->create();
+        \App\Models\Player::factory(45)->create();
+        \App\Models\Photo::factory(45)->create();
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\TeamController;
-
+use App\Http\Controllers\DashController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +21,7 @@ use App\Http\Controllers\TeamController;
 
 Route::get('/', [HomeController::class, 'index'])->name("home.index");
 Route::get('/back', [BackController::class, 'index'])->name("back.index");
-
+Route::get('/dashboard', [DashController::class, 'index'])->name("front.dash");
 
 //Teams
 

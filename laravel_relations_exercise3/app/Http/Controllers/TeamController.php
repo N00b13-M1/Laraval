@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
+use App\Models\Position;
+use App\Models\Player;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -14,8 +16,11 @@ class TeamController extends Controller
      */
     public function index()
     {
+        // $list = array('hc1wXBL7zCsdfMu', '10', 'dhdsfHddfD','otheridshere');
+        // dd(in_array(10, $list));
         $teams = Team::all();
-        // dd($teams);
+
+
         return view("back.pages.teams.teams",compact('teams'));
     }
 

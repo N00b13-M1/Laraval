@@ -17,7 +17,7 @@
                         <th>Age</th>
                         <th>Telephone</th>
                         <th>Email</th>
-                        <th>Genre</th>
+                        <th>Gender</th>
                         <th>Country</th>
                         <th>Position</th>
                         <th>Photo</th>
@@ -35,7 +35,7 @@
                             <td>{{ $player->age }}</td>
                             <td>{{ $player->telephone }}</td>
                             <td>{{ $player->email }}</td>
-                            <td>{{ $player->genre }}</td>
+                            <td>{{ $player->gender }}</td>
                             <td>{{ $player->country_of_origin }}</td>
                             <td>{{ $player->position->position }}</td>
                             <td><img src="{{ asset($player->photo->img)}}"</td>

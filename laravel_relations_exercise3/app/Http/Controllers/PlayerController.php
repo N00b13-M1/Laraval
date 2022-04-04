@@ -43,7 +43,7 @@ class PlayerController extends Controller
             'age' => 'required',
             'telephone' => 'required',
             'email' => 'required',
-            'genre' => 'required',
+            'gender' => 'required',
             'country_of_origin' => 'required',
             'position_id' => 'required',
         ]);
@@ -54,7 +54,7 @@ class PlayerController extends Controller
         $player->age = $request->age;
         $player->telephone = $request->telephone;
         $player->email = $request->email;
-        $player->genre = $request->genre;
+        $player->gender = $request->gender;
         $player->country_of_origin = $request->country_of_origin;
         $player->position_id = $player->position_id;
         $player->save();
@@ -62,7 +62,6 @@ class PlayerController extends Controller
         $photo->img = $request->img;
         $photo->player_id = $player->id;
         $photo->save();
-
 
         return redirect()->route('positions.index')->with("success", "Successfully added");
     }
@@ -90,7 +89,6 @@ class PlayerController extends Controller
         $player = Player::find($id);
         return view('back.pages.players.edit', compact('player'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -110,10 +108,8 @@ class PlayerController extends Controller
         $player->country_of_origin = $request->country_of_origin;
         $player->position_id = $player->position_id;
         $player->save();
-
         return redirect()->route('players.index')->with("update", "Successfully Updated");
     }
-
     /**
      * Remove the specified resource from storage.
      *

@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
+
 return new class extends Migration
 {
     /**
@@ -20,9 +22,10 @@ return new class extends Migration
             $table->integer("age");
             $table->string("telephone");
             $table->string("email");
-            $table->string("genre");
+            $table->string("gender");
             $table->string("country_of_origin");
             $table->foreignId("position_id")->constrained("positions", "id");
+            $table->foreignId("team_id")->constrained("teams", "id");
             $table->timestamps();
         });
     }

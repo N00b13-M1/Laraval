@@ -59,7 +59,6 @@ class PositionController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -71,7 +70,6 @@ class PositionController extends Controller
         $position = Position::find($id);
         return view("back.pages.positions.edit", compact('position'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -105,3 +103,4 @@ class PositionController extends Controller
         return redirect()->back()->with("delete", "Successfully Deleted");
     }
 }
+

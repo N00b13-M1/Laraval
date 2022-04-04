@@ -4,7 +4,6 @@
             <div class="col-lg-12">
                 <div class="features-content">
                     <div class="row">
-
                         @foreach ($features as $feature)
                             <div class="col-lg-3">
                                 <div class="features-item {{ $feature["class"] }} wow fadeInUp" data-wow-duration="1s"

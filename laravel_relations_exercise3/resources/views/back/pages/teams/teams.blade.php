@@ -33,11 +33,12 @@
                             <td>{{ $team->name }}</td>
                             <td>{{ $team->city }}</td>
                             <td>{{ $team->country }}</td>
-                            <td>{{ $team->number_players }}</td>
-                            <td>{{ $team->number_forwards}}</td>
-                            <td>{{ $team->number_midfielders}}</td>
-                            <td>{{ $team->number_defenders}}</td>
-                            <td>{{ $team->number_substitutes}}</td>
+                            <td>{{ $team->players->count() }} / {{ $team->number_players }}</td>
+                            <td>{{ $team->players->where('position_id', 1)->count() }}/{{ $team->number_forwards}}</td>
+                            <td>
+                                {{ $team->players->where('position_id', 2)->count() }} /{{ $team->number_midfielders}}</td>
+                            <td>{{ $team->players->where('position_id', 3)->count() }}/{{ $team->number_defenders}}</td>
+                            <td>{{ $team->players->where('position_id', 4)->count() }}/{{ $team->number_substitutes}}</td>
                             <td>
                                 <form action="{{ route('teams.read', $team->id) }}" method="get">
                                     @csrf
@@ -82,3 +83,6 @@
         <section>
     @include('back/partials/footer')
 @endsection
+
+
+
