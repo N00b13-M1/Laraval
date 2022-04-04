@@ -61,6 +61,9 @@
                     </tbody>
                 @endforeach
             </table>
+            <div class="container d-flex justify-content-center mb-5">
+                {{ $players->links("pagination::bootstrap-5") }}
+            </div>
         </div>
         {{-- Alert Testimonial Added --}}
         @if (session()->has('success'))

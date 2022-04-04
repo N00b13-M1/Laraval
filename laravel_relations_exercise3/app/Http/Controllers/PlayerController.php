@@ -15,7 +15,9 @@ class PlayerController extends Controller
      */
     public function index()
     {
+        // $player = DB::table('players')->paginate(5);
         $players = Player::all();
+        $players = Player::paginate(5);
         return view('back.pages.players.players', compact("players"));
     }
 

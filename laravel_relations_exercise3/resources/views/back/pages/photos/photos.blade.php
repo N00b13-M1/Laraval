@@ -40,6 +40,9 @@
                     </tbody>
                 @endforeach
             </table>
+            <div class="container d-flex justify-content-center mb-5">
+                {{ $photos->links("pagination::bootstrap-5") }}
+            </div>
         </div>
         {{-- Alert Testimonial Added --}}
         @if (session()->has('success'))
