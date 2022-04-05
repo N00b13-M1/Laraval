@@ -16,8 +16,6 @@ class TeamController extends Controller
      */
     public function index()
     {
-        // $list = array('hc1wXBL7zCsdfMu', '10', 'dhdsfHddfD','otheridshere');
-        // dd(in_array(10, $list));
         $teams = Team::all();
 
 

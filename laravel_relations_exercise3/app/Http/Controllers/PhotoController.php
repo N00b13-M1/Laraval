@@ -110,6 +110,10 @@ class PhotoController extends Controller
     public function destroy( $id )
     {
         $photo = Photo::find($id);
+        $path = 'img/' . $photo->img;
+        if (File::exists($path)) {
+            File::delete($path);
+        }
         $photo->delete();
         return redirect()->back()->with("delete", "Successfully Deleted");
     }

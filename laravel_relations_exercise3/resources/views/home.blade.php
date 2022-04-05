@@ -1,4 +1,4 @@
-@extends('back/layouts.app')
+@extends('front/layouts.app')
 @section('content')
     @include('front/partials/navbar')
     <h2 class="text-center">Welcome to the our volleyball Club</h2>

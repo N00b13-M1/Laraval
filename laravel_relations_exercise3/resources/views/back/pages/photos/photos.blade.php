@@ -22,8 +22,14 @@
                     <tbody>
                         <tr>
                             <td>{{ $photo->id }}</td>
-                            <td><img src="{{ asset("$photo->img") }}" width="100" height="100"alt="" srcset="">
+                            @if (File::exists("img/". $photo->img))
+                                <td>
+                                    <img src="{{ asset("img/" . $photo->img) }}" width="100" height="100"alt="" srcset="">
                                 </td>
+                                @else
+                                <td><img src="{{ asset("$photo->img") }}" width="100" height="100"alt="" srcset="">
+                                </td>
+                            @endif
                             <td>
                                 <form action="{{ route('photos.edit', $photo->id) }}" method="get">
                                     @csrf

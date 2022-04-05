@@ -7,6 +7,7 @@ use App\Models\Player;
 use App\Models\Position;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PlayerController extends Controller
 {
@@ -17,8 +18,7 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        // $player = DB::table('players')->paginate(5);
-        $players = Player::all();
+        // $players = DB::table('players')->paginate(5);
         $players = Player::paginate(5);
         return view('back.pages.players.players', compact("players"));
     }
@@ -61,11 +61,11 @@ class PlayerController extends Controller
         $player->email = $request->email;
         $player->gender = $request->gender;
         $player->country_of_origin = $request->country_of_origin;
-        $player->position_id = $player->position_id;
+        $player->position_id = $request->position_id;
         $player->save();
         $photo = new Photo();
         $photo->img = $request->img;
-        $photo->player_id = $photo->player_id;
+        $photo->player_id = $player->id;
         $photo->save();
 
         return redirect()->route('positions.index')->with("success", "Successfully added");

@@ -1,9 +1,4 @@
-@extends('back/layouts.app')
-@section('content')
-    @include('front/partials/navbar')
-    <h1>Test</h1>
-    @include('front/partials/footer') 
-@endsection
+@extends('front/layouts.app')
 
 {{-- # Exercice 3
 laravel-relations-exercice3 (one to many)
@@ -36,3 +31,57 @@ une section ( les équipes hors europes )
 une section ( les joueurs qui représente leur pays( meme pays dorigine que l'équipe dans la quelle ils jouent )
 Une section 5 joueuses au hasard qui ont une équipe !
 Une section 5 joueurs homme et qui ont une équipe ! --}}
+@section('content')
+    @include('front/partials/navbar')
+    <h2>2 équipes remplies au hasard</h2>
+    <!-- Table with outer spacing -->
+    <div class="table-responsive">
+        <table class="table table-lg">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Continent</th>
+                    <th>Forwards</th>
+                    <th>Midfielders</th>
+                    <th>Defenders</th>
+                    <th>Substitutes</th>
+                    <th>Max Players</th>
+                </tr>
+            </thead>
+            <tbody>
+                @php
+                    $count = 0;
+                @endphp
+                @foreach ($teams->shuffle() as $team)
+                    @if ($team->players->count() === $team->number_forwards + $team->number_midfielders + $team->number_defenders + $team->number_substitutes && $count < 2)
+                        <tr>
+                            <td style="font-weight: 900">{{ $team->id }}</td>
+                            <td>{{ $team->name }}</td>
+                            <td>{{ $team->city }}</td>
+                            <td>{{ $team->country }}</td>
+                            <td>{{ $team->continent }}</td>
+                            <td>{{ $team->players->where('role_id', 1)->count() }} / {{ $team->number_forwards }}</td>
+                            <td>{{ $team->players->where('role_id', 2)->count() }} / {{ $team->number_midfielders }}</td>
+                            <td>{{ $team->players->where('role_id', 3)->count() }} / {{ $team->number_defenders }}</td>
+                            <td>{{ $team->players->where('role_id', 4)->count() }} / {{ $team->number_substitutes }}</td>
+                            <td>{{ count($team->players) }} /
+                                {{ $team->number_forwards + $team->number_midfielders + $team->number_defenders + $team->number_substitutes }}
+                            </td>
+                        </tr>
+                        @php
+                            $count++;
+                        @endphp
+                    @endif
+                @endforeach
+
+            </tbody>
+        </table>
+    </div>
+
+
+ 
+    @include('front/partials/footer') 
+@endsection

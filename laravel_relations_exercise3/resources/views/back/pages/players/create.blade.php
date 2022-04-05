@@ -72,7 +72,7 @@
             </div>
             <div class="mb-3">
                 <label for="team_name" class="form-label">Team name</label>
-                <input type="team_name" class="form-control w-50 mx-auto" id="team_name" 
+                <input type="text" class="form-control w-50 mx-auto" id="team_name" 
                     name="team_name">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

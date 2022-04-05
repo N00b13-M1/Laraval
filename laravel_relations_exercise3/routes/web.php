@@ -74,3 +74,5 @@ Route::get('back/positions/new', [PositionController::class, 'create'])->name("p
 Route::post('back/positions', [PositionController::class, 'store'])->name("positions.store");
 
 Route::post('back/positions/{id}/delete', [PositionController::class, 'destroy'])->name("positions.destroy");
+
+// Route::resource('position', Pos)
