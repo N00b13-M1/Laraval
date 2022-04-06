@@ -14,6 +14,7 @@
         @endif
         <form class="mx-5" action="{{ route('teams.update', $team->id) }}" method="post">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label for="name" class="form-label">Team Name</label>
                 <input type="text" class="form-control w-50 mx-auto" id="name" value="{{ $team->name }}"

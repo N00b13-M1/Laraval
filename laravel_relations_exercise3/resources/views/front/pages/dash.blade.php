@@ -63,10 +63,140 @@ Une section 5 joueurs homme et qui ont une équipe ! --}}
                             <td>{{ $team->city }}</td>
                             <td>{{ $team->country }}</td>
                             <td>{{ $team->continent }}</td>
-                            <td>{{ $team->players->where('role_id', 1)->count() }} / {{ $team->number_forwards }}</td>
-                            <td>{{ $team->players->where('role_id', 2)->count() }} / {{ $team->number_midfielders }}</td>
-                            <td>{{ $team->players->where('role_id', 3)->count() }} / {{ $team->number_defenders }}</td>
-                            <td>{{ $team->players->where('role_id', 4)->count() }} / {{ $team->number_substitutes }}</td>
+                            <td>{{ $team->players->where('position_id', 1)->count() }} / {{ $team->number_forwards }}</td>
+                            <td>{{ $team->players->where('position_id', 2)->count() }} / {{ $team->number_midfielders }}</td>
+                            <td>{{ $team->players->where('position_id', 3)->count() }} / {{ $team->number_defenders }}</td>
+                            <td>{{ $team->players->where('position_id', 4)->count() }} / {{ $team->number_substitutes }}</td>
+                            <td>{{ count($team->players) }} /
+                                {{ $team->number_forwards + $team->number_midfielders + $team->number_defenders + $team->number_substitutes }}
+                            </td>
+                        </tr>
+                        @php
+                            $count++;
+                        @endphp
+                    @endif
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+    {{-- 4 joueurs sans équipe au hasard
+    <h2>4 joueurs sans équipe au hasard</h2>
+    <!-- Table with outer spacing -->
+    <div class="table-responsive">
+        <table class="table table-lg">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOM</th>
+                    <th>PRENOM</th>
+                    <th>PAYS</th>
+                    <th>ROLE</th>
+                    <th>EQUIPE</th>
+                    <th>PHOTO</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($joueurs->shuffle()->where('equipe_id', 1)->take(4)
+        as $joueur)
+                    <tr>
+                        <td style="font-weight: 900">{{ $joueur->id }}</td>
+                        <td>{{ $joueur->nom }}</td>
+                        <td>{{ $joueur->prenom }}</td>
+                        <td style="width: 10%">{{ $joueur->pays }}</td>
+                        <td>{{ $joueur->role->nom }}</td>
+                        <td>{{ $joueur->equipe->nom }}</td>
+
+                        @if (File::exists('img/' . $joueur->photo->img))
+                            <td><img style="width: 50px" src="{{ asset('img/' . $joueur->photo->img) }}" alt="">
+                            </td>
+                        @else
+                            <td><img style="width: 50px" src="{{ $joueur->photo->img }}" alt=""></td>
+                            </td>
+                        @endif
+
+                    </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+    </div> --}}
+
+    {{-- 4 joueurs avec équipe au hasard --}}
+    <h2>4 joueurs avec équipe au hasard</h2>
+    <!-- Table with outer spacing -->
+    <div class="table-responsive">
+        <table class="table table-lg">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Given Name</th>
+                    <th>Age</th>
+                    <th>Position</th>
+                    <th>Team</th>
+                    <th>Photo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($players->shuffle()->where('team_id', '!=', 1)->take(4)
+        as $player)
+                    <tr>
+                        <td style="font-weight: 900">{{ $player->id }}</td>
+                        <td>{{ $player->last_name }}</td>
+                        <td>{{ $player->given_name }}</td>
+                        <td>{{ $player->age }}</td>
+                        <td>{{ $player->position->position }}</td>
+                        <td>{{ $player->team->name }}</td>
+
+                        @if (File::exists('img/' . $player->photo->img))
+                            <td><img style="width: 50px" src="{{ asset('img/' . $$player->photo->img) }}" alt="">
+                            </td>
+                        @else
+                            <td><img style="width: 50px" src="{{ $player->photo->img }}" alt=""></td>
+                            </td>
+                        @endif
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+    {{-- 2 équipes non remplies au hasard --}}
+    <h2>2 équipes non remplies au hasard</h2>
+    <!-- Table with outer spacing -->
+    <div class="table-responsive">
+        <table class="table table-lg">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Continent</th>
+                    <th>Forwards</th>
+                    <th>Midfielders</th>
+                    <th>Defenders</th>
+                    <th>Substitutes</th>
+                    <th>Max Players</th>
+                </tr>
+            </thead>
+            <tbody>
+                @php
+                    $count = 0;
+                @endphp
+                @foreach ($teams->shuffle() as $team)
+                    @if ($team->players->count() < $team->number_forwards + $team->number_midfielders + $team->number_defenders + $team->number_substitutes && $count < 2)
+                        <tr>
+                            <td style="font-weight: 900">{{ $team->id }}</td>
+                            <td>{{ $team->name }}</td>
+                            <td>{{ $team->city }}</td>
+                            <td>{{ $team->country }}</td>
+                            <td>{{ $team->continent }}</td>
+                            <td>{{ $team->players->where('position_id', 1)->count() }} / {{ $team->number_forwards }}</td>
+                            <td>{{ $team->players->where('position_id', 2)->count() }} / {{ $team->number_midfielders }}</td>
+                            <td>{{ $team->players->where('position_id', 3)->count() }} / {{ $team->number_defenders }}</td>
+                            <td>{{ $team->players->where('position_id', 4)->count() }} / {{ $team->number_substitutes }}</td>
                             <td>{{ count($team->players) }} /
                                 {{ $team->number_forwards + $team->number_midfielders + $team->number_defenders + $team->number_substitutes }}
                             </td>
@@ -81,7 +211,5 @@ Une section 5 joueurs homme et qui ont une équipe ! --}}
         </table>
     </div>
 
-
- 
     @include('front/partials/footer') 
 @endsection

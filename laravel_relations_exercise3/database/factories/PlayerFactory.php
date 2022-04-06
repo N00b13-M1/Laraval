@@ -37,8 +37,6 @@ class PlayerFactory extends Factory
             $equipe++;      //on change d'équipe, on passe à la suivante parce que la première est full
         }
 
-        
-
         return [
             "last_name"=> $this->faker->firstName(),
             "given_name"=> $this->faker->lastName(),

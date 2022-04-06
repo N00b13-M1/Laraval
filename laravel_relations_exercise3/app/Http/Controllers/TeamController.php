@@ -71,9 +71,9 @@ class TeamController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Team $team)
     {
-        $team = Team::find($id);
+        // $team = Team::find($id);
         return view('back.pages.teams.show',compact('team'));
     }
 
@@ -83,9 +83,9 @@ class TeamController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function edit( $id)
+    public function edit( Team $team)
     {
-        $team = Team::find($id);
+        // $team = Team::find($id);
         return view('back.pages.teams.edit',compact('team'));
     }
 
@@ -96,7 +96,7 @@ class TeamController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update($id, Request $request)
+    public function update(Team $team, Request $request)
     {
         $request->validate([
             'name' => 'required',
@@ -109,7 +109,6 @@ class TeamController extends Controller
             'number_substitutes' => 'required',
         ]);
         
-        $team = Team::find($id);
         $team->name = $request->name;
         $team->city = $request->city;
         $team->country = $request->country;
@@ -129,9 +128,9 @@ class TeamController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id )
+    public function destroy( Team $team )
     {
-        $team = Team::find($id);
+        // $team = Team::find($id);
         $team->delete();
         return redirect()->back()->with("delete", "Successfully Deleted");
     }

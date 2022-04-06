@@ -25,23 +25,24 @@ Route::get('/dashboard', [DashController::class, 'index'])->name("front.dash");
 
 //Teams
 
-Route::get('back/teams', [TeamController::class, 'index'])->name("teams.index");
+// Route::get('back/teams', [TeamController::class, 'index'])->name("teams.index");
 
-Route::get('back/teams/{id}/edit', [TeamController::class, 'edit'])->name("teams.edit");
-Route::post('back/teams/{id}/edit', [TeamController::class, 'update'])->name("teams.update");
+// Route::get('back/teams/{id}/edit', [TeamController::class, 'edit'])->name("teams.edit");
+// Route::post('back/teams/{id}/edit', [TeamController::class, 'update'])->name("teams.update");
 
-Route::get('back/teams/new', [TeamController::class, 'create'])->name("teams.create");
-Route::post('back/teams', [TeamController::class, 'store'])->name("teams.store");
+// Route::get('back/teams/new', [TeamController::class, 'create'])->name("teams.create");
+// Route::post('back/teams', [TeamController::class, 'store'])->name("teams.store");
 
-Route::post('back/teams/{id}/delete', [TeamController::class, 'destroy'])->name("teams.destroy");
+// Route::post('back/teams/{id}/delete', [TeamController::class, 'destroy'])->name("teams.destroy");
 
-Route::get('back/teams/{id}/read', [TeamController::class, 'show'])->name("teams.read");
+// Route::get('back/teams/{id}/read', [TeamController::class, 'show'])->name("teams.read");
+
+Route::resource('teams',TeamController::class);
 
 
 //Players
 
 Route::get('back/players', [PlayerController::class, 'index'])->name("players.index");
-
 
 Route::get('back/players/{id}/edit', [PlayerController::class, 'edit'])->name("players.edit");
 Route::post('back/players/{id}/edit', [PlayerController::class, 'update'])->name("players.update");

@@ -35,27 +35,28 @@
                             <td>{{ $team->city }}</td>
                             <td>{{ $team->country }}</td>
                             <td>{{ $team->continent }}</td>
-                            <td>{{ $team->players->count() }} / {{ $team->number_players }}</td>
+                            <td>{{ $team->players->count() }} / {{ $team->number_forwards +$team->number_midfielders + $team->number_defenders + $team->number_substitutes }}</td>
                             <td>{{ $team->players->where('position_id', 1)->count() }}/{{ $team->number_forwards}}</td>
                             <td>
-                                {{ $team->players->where('position_id', 2)->count() }} /{{ $team->number_midfielders}}</td>
+                                {{ $team->players->where('position_id', 2)->count() }}/{{ $team->number_midfielders}}</td>
                             <td>{{ $team->players->where('position_id', 3)->count() }}/{{ $team->number_defenders}}</td>
                             <td>{{ $team->players->where('position_id', 4)->count() }}/{{ $team->number_substitutes}}</td>
                             <td>
-                                <form action="{{ route('teams.read', $team->id) }}" method="get">
+                                <form action="{{ route('teams.show', $team) }}" method="get">
                                     @csrf
                                     <button class="btn btn-warning" type="submit">Read</button>
                                 </form>
                             </td>
                             <td>
-                                <form action="{{ route('teams.edit', $team->id) }}" method="get">
+                                <form action="{{ route('teams.edit', $team) }}" method="get">
                                     @csrf
                                     <button class="btn btn-primary" type="submit">Edit</button>
                                 </form>
                             </td>
                             <td>
-                                <form action="{{ route('teams.destroy', $team->id) }}" method="post">
+                                <form action="{{ route('teams.destroy', $team) }}" method="post">
                                     @csrf
+                                    @method('DELETE')
                                     <button class="btn btn-danger" type="submit">Delete</button>
                                 </form>
                             </td>

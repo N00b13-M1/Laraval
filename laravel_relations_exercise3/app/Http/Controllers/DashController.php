@@ -15,3 +15,4 @@ class DashController extends Controller
     return view('front.pages.dash', compact('players', 'teams'));
     }
 }
+
