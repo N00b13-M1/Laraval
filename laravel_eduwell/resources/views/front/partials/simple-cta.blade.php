@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-5 offset-lg-1">
                 <div class="left-image">
-                    <img src="assets/images/cta-left-image.png" alt="">
+                    <img src="{{ asset('img/cta-left-image.png') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-5 align-self-center">

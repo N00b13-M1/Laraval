@@ -6,7 +6,7 @@
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <img src="assets/images/templatemo-eduwell.png" alt="EduWell Template">
+                        <img src="{{ asset('img/templatemo-eduwell.png') }}" alt="EduWell Template">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->

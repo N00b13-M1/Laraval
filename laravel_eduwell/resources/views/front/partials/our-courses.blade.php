@@ -26,7 +26,7 @@
                                     <li class="active">
                                         <div>
                                             <div class="left-image">
-                                                <img src="assets/images/courses-01.jpg" alt="">
+                                                <img src="{{ asset('img/courses-01.jpg') }}" alt="">
                                                 <div class="price">
                                                     <h6>$128</h6>
                                                 </div>
@@ -34,7 +34,7 @@
                                             <div class="right-content">
                                                 <h4>Web Development</h4>
                                                 <p>Did you know that you can visit <a rel="nofollow"
-                                                        href="https://www.toocss.com/" target="_blank">TooCSS
+                                                        href="{{ url('https://www.toocss.com/') }}" target="_blank">TooCSS
                                                         website</a> for latest listing of HTML templates and a
                                                     variety of useful templates.
                                                     <br><br>You just need to go and visit that website right now. IF
@@ -53,7 +53,7 @@
                                     <li>
                                         <div>
                                             <div class="left-image">
-                                                <img src="assets/images/courses-02.jpg" alt="">
+                                                <img src="{{ asset('img/courses-02.jpg') }}" alt="">
                                                 <div class="price">
                                                     <h6>$156</h6>
                                                 </div>
@@ -77,7 +77,7 @@
                                     <li>
                                         <div>
                                             <div class="left-image">
-                                                <img src="assets/images/courses-03.jpg" alt="">
+                                                <img src="{{ asset('img/courses-03.jpg') }}" alt="">
                                                 <div class="price">
                                                     <h6>$184</h6>
                                                 </div>
@@ -101,7 +101,7 @@
                                     <li>
                                         <div>
                                             <div class="left-image">
-                                                <img src="assets/images/courses-04.jpg" alt="">
+                                                <img src="{{ asset('img/courses-04.jpg') }}" alt="">
                                                 <div class="price">
                                                     <h6>$76</h6>
                                                 </div>

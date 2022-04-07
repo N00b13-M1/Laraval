@@ -12,7 +12,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-01.png" alt="">
+                                <img src="{{ asset('img/service-icon-01.png') }}" alt="">
                             </div>
                             <h4>Useful Tricks</h4>
                             <p>EduWell is the professional HTML5 template for your school or university websites.
@@ -22,7 +22,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-02.png" alt="">
+                                <img src="{{ asset('img/service-icon-02.png') }}" alt="">
                             </div>
                             <h4>Creative Ideas</h4>
                             <p>You can download and use this EduWell Template for your teaching and learning stuffs.
@@ -32,7 +32,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-03.png" alt="">
+                                <img src="{{ asset('img/service-icon-03.png') }}" alt="">
                             </div>
                             <h4>Ready Target</h4>
                             <p>Please tell your friends about the best CSS template website that is TemplateMo.</p>
@@ -41,7 +41,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-04.png" alt="">
+                                <img src="{{ asset('img/service-icon-04.png') }}" alt="">
                             </div>
                             <h4>Technology</h4>
                             <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
@@ -50,7 +50,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-01.png" alt="">
+                                <img src="{{ asset('img/service-icon-01.png') }}" alt="">
                             </div>
                             <h4>Useful Tricks</h4>
                             <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
@@ -59,7 +59,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-02.png" alt="">
+                                <img src="{{ asset('img/service-icon-02.png') }}" alt="">
                             </div>
                             <h4>Creative Ideas</h4>
                             <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
@@ -68,7 +68,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-03.png" alt="">
+                                <img src="{{ asset('img/service-icon-03.png') }}" alt="">
                             </div>
                             <h4>Ready Target</h4>
                             <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
@@ -77,7 +77,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-04.png" alt="">
+                                <img src="{{ asset('img/service-icon-04.png') }}" alt="">
                             </div>
                             <h4>Technology</h4>
                             <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
@@ -86,7 +86,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-01.png" alt="">
+                                <img src="{{ asset('img/service-icon-01.png') }}" alt="">
                             </div>
                             <h4>Useful Tricks</h4>
                             <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
@@ -95,7 +95,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-02.png" alt="">
+                                <img src="{{ asset('img/service-icon-02.png') }}" alt="">
                             </div>
                             <h4>Creative Ideas</h4>
                             <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
@@ -104,7 +104,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-03.png" alt="">
+                                <img src="{{ asset('img/service-icon-03.png') }}" alt="">
                             </div>
                             <h4>Ready Target</h4>
                             <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
@@ -113,7 +113,7 @@
                     <div class="item">
                         <div class="service-item">
                             <div class="icon">
-                                <img src="assets/images/service-icon-04.png" alt="">
+                                <img src="{{ asset('img/service-icon-04.png') }}" alt="">
                             </div>
                             <h4>Technology</h4>
                             <p>Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.</p>
