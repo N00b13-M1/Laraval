@@ -37,6 +37,31 @@ class PlayerFactory extends Factory
             $equipe++;      //on change d'équipe, on passe à la suivante parce que la première est full
         }
 
+
+        static $position = 1;
+        static $team = 1;
+        static $counter = 1;
+
+        
+        
+        if($counter > 2) {
+            $position++;
+            $counter=2;
+        } else {
+            $counter++;
+        }
+
+        
+
+        //1 round - 1 1 2
+        //2 round - 1 1 3
+        //3 round - 2 1 2
+        //4 round - 2 1 3
+        //5 round - 3 1 2
+        //6 round - 3 1 3
+
+
+
         return [
             "last_name"=> $this->faker->firstName(),
             "given_name"=> $this->faker->lastName(),
